@@ -6,9 +6,10 @@
 
 :root {
     --background: #0f172a;
-    --navbar: rgba(30, 41, 59, 0.75);
+    --surface: rgba(15, 23, 42, 0.65);
     --text: #ffffff;
-    --accent: #60a5fa;
+    --secondary: #cbd5e1;
+    --accent: #22c55e;
 }
 
 html {
@@ -17,110 +18,207 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: var(--background);
     color: var(--text);
+
+    min-height: 100vh;
     padding-top: 100px;
+
+    background:
+        linear-gradient(rgba(15, 23, 42, .75), rgba(15, 23, 42, .85)),
+        url("images/bg/background.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* NavBar */
+/* ===========================
+   Navigation Bar
+=========================== */
+
 .navbar {
+
     position: fixed;
+
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
+
+    width: fit-content;
+    height: 60px;
+
+    padding: 0 40px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: fit-content;
-    height: 60px;
-    padding: 0 40px;
-
-    background: var(--navbar);
+    background: rgba(30, 41, 59, .75);
 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
 
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, .08);
+
     border-radius: 999px;
 
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .35);
 
     z-index: 1000;
 }
 
 .nav-links {
+
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 45px;
+
     list-style: none;
+
+    gap: 45px;
 }
 
 .nav-links a {
-    color: var(--text);
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
 
-    transition: color .2s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--accent);
-}
-
-/* ===========================
-   404 Page
-=========================== */
-
-.error-page {
-    min-height: calc(100vh - 100px);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    padding: 20px;
-}
-
-.error-page h1 {
-    font-size: 120px;
-    line-height: 1;
-    margin-bottom: 10px;
-}
-
-.error-page h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.error-page p {
-    max-width: 500px;
-    color: #cbd5e1;
-    font-size: 18px;
-    margin-bottom: 35px;
-}
-
-.button {
-    display: inline-block;
-
-    padding: 14px 28px;
-
-    background: var(--accent);
     color: white;
 
     text-decoration: none;
 
-    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 500;
 
-    transition: background .2s ease;
+    transition: .25s;
 }
 
-.button:hover {
-    background: #3b82f6;
+.nav-links a:hover,
+.nav-links a.active {
+
+    color: var(--accent);
+}
+
+/* ===========================
+   Intro
+=========================== */
+
+.intro {
+
+    min-height: calc(100vh - 100px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.intro::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(34, 197, 94, .22),
+            transparent 70%);
+
+    filter: blur(100px);
+
+    z-index: 0;
+}
+
+.intro-content {
+
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 900px;
+}
+
+.intro h1 {
+
+    font-size: clamp(60px, 7vw, 90px);
+
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.intro p {
+
+    font-size: 20px;
+
+    color: var(--secondary);
+
+    line-height: 1.7;
+
+    max-width: 750px;
+
+    margin: auto auto 40px;
+}
+
+.intro-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.button-primary,
+.button-secondary {
+
+    padding: 15px 34px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .25s;
+}
+
+.button-primary {
+
+    background: var(--accent);
+
+    color: white;
+}
+
+.button-primary:hover {
+
+    transform: translateY(-3px);
+
+    background: #16a34a;
+}
+
+.button-secondary {
+
+    color: white;
+
+    background: rgba(255, 255, 255, .05);
+
+    border: 1px solid rgba(255, 255, 255, .18);
+}
+
+.button-secondary:hover {
+
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, .10);
 }
