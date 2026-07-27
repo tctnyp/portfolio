@@ -18,43 +18,40 @@
             font-family: Arial, Helvetica, sans-serif;
             background: #0f172a;
             color: white;
+            padding-top: 100px;
         }
 
-        nav {
-            width: 100%;
-            background: #1e293b;
-            padding: 18px 40px;
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 90%;
+            max-width: 1100px;
+            height: 70px;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
+            padding: 0 35px;
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
 
-        .nav-links a:hover {
-            color: #60a5fa;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+
+            z-index: 1000;
         }
 
         .logo {
             font-size: 32px;
             font-weight: bold;
-            font-family: Arial, Helvetica, sans-serif;
 
             background: linear-gradient(90deg,
                     #5865F2,
@@ -82,12 +79,30 @@
                 background-position: 400% 50%;
             }
         }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
     </style>
 </head>
 
 <body>
 
-    <nav>
+    <nav class="navbar">
         <div class="logo">Tan Chee Tiong</div>
 
         <ul class="nav-links">
