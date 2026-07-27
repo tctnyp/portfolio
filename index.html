@@ -32,10 +32,8 @@
             height: 70px;
 
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-
-            padding: 0 35px;
 
             background: rgba(30, 41, 59, 0.75);
             backdrop-filter: blur(15px);
@@ -49,40 +47,11 @@
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-
-            background: linear-gradient(90deg,
-                    #5865F2,
-                    #7C5CFF,
-                    #A855F7,
-                    #EC4899,
-                    #22D3EE,
-                    #5865F2);
-
-            background-size: 400% 100%;
-
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-
-            animation: gradient 5s linear infinite;
-        }
-
-        @keyframes gradient {
-            from {
-                background-position: 0% 50%;
-            }
-
-            to {
-                background-position: 400% 50%;
-            }
-        }
-
         .nav-links {
             display: flex;
-            gap: 35px;
+            align-items: center;
+            justify-content: center;
+            gap: 45px;
             list-style: none;
         }
 
@@ -103,8 +72,6 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Tan Chee Tiong</div>
-
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
