@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio - Home</title>
-
-    <link rel="icon" href="images/favicon.ico">
+    <title>Home</title>
 
     <style>
         * {
@@ -18,18 +16,55 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
+            background: #0f172a;
+            color: white;
         }
 
-        a {
-            color: #000000;
+        nav {
+            width: 100%;
+            background: #1e293b;
+            padding: 18px 40px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
             text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
         }
     </style>
 </head>
 
 <body>
+
+    <nav>
+        <div class="logo">Tan Chee Tiong</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
 </body>
 
