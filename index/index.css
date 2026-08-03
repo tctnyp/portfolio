@@ -172,20 +172,21 @@ a {
 .intro-grid {
     display: flex;
     align-items: center;
-    gap: 48px;
+    gap: 72px;
     width: 100%;
-    max-width: 1120px;
+    max-width: 1240px;
+    justify-content: space-between;
 }
 
 .intro-content {
     position: relative;
     z-index: 1;
-    max-width: 640px;
+    max-width: 520px;
     text-align: left;
 }
 
 .intro-image {
-    flex: 0 0 420px;
+    flex: 0 0 560px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -214,7 +215,7 @@ a {
 
 .intro-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -235,6 +236,21 @@ a {
     .intro-image {
         width: 80%;
         max-width: 420px;
+    }
+}
+
+@media (min-width: 901px) {
+
+    /* nudge content visually further left/right on wide screens */
+    .intro-grid {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
+@media (max-width: 900px) {
+    .intro-buttons {
+        justify-content: center;
     }
 }
 
