@@ -166,7 +166,7 @@ body {
 }
 
 .tag {
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.04);
     padding: 6px 10px;
     border-radius: 999px;
     font-weight: 700;
@@ -192,7 +192,7 @@ body {
 .modal-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-panel {
@@ -206,7 +206,7 @@ body {
     border-radius: 12px;
     overflow: hidden;
     z-index: 2;
-    transition: left 320ms cubic-bezier(.2,.9,.2,1), top 320ms cubic-bezier(.2,.9,.2,1), width 320ms cubic-bezier(.2,.9,.2,1), height 320ms cubic-bezier(.2,.9,.2,1), transform 320ms cubic-bezier(.2,.9,.2,1);
+    transition: left 320ms cubic-bezier(.2, .9, .2, 1), top 320ms cubic-bezier(.2, .9, .2, 1), width 320ms cubic-bezier(.2, .9, .2, 1), height 320ms cubic-bezier(.2, .9, .2, 1), transform 320ms cubic-bezier(.2, .9, .2, 1);
 }
 
 .modal-panel.expanded {
@@ -239,14 +239,41 @@ body {
     padding: 20px;
 }
 
-.modal-title { font-size: 24px; margin-bottom: 6px; }
-.modal-subtitle { color: var(--secondary); margin-bottom: 12px; }
-.modal-desc { color: var(--secondary); line-height: 1.6; }
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.modal-subtitle {
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.modal-desc {
+    color: var(--secondary);
+    line-height: 1.6;
+}
 
 /* Responsive overrides */
 @media (max-width: 900px) {
-    .nav-links { gap: 18px; flex-wrap: wrap; justify-content: center; }
-    .page-grid { grid-template-columns: 1fr; gap: 16px; }
-    .project-banner img { height: 160px; }
-    .modal-panel.expanded { width: 96%; height: auto; transform: translate(-50%, -50%); }
+    .nav-links {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .page-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .project-banner img {
+        height: 160px;
+    }
+
+    .modal-panel.expanded {
+        width: 96%;
+        height: auto;
+        transform: translate(-50%, -50%);
+    }
 }
