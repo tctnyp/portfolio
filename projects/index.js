@@ -42,23 +42,76 @@ document.querySelectorAll('.view-project').forEach(btn => {
         if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
         if (modalDesc) modalDesc.textContent = data.desc;
         if (modalBanner) modalBanner.src = data.banner;
+        // animate from card -> modal
+        const card = btn.closest('.project-card');
+        const panel = modal.querySelector('.modal-panel');
+        const rect = card.getBoundingClientRect();
+
+        // set initial panel position to card
+        panel.style.left = rect.left + 'px';
+        panel.style.top = rect.top + 'px';
+        panel.style.width = rect.width + 'px';
+        panel.style.height = rect.height + 'px';
+        panel.classList.remove('expanded');
+
         modal.setAttribute('aria-hidden', 'false');
+
+        // allow layout then expand to center
+        requestAnimationFrame(() => {
+            // Force reflow
+            void panel.offsetWidth;
+            panel.classList.add('expanded');
+        });
     });
 });
 
 // Close handlers
+const panel = modal && modal.querySelector('.modal-panel');
 modal && modal.querySelector('.modal-close').addEventListener('click', () => {
-    modal.setAttribute('aria-hidden', 'true');
+    if (!panel) { modal.setAttribute('aria-hidden', 'true'); return; }
+    // animate back to original card size/position by removing expanded
+    panel.classList.remove('expanded');
+
+    // after transition, hide modal and clear inline styles
+    const onEnd = () => {
+        modal.setAttribute('aria-hidden', 'true');
+        panel.style.left = '';
+        panel.style.top = '';
+        panel.style.width = '';
+        panel.style.height = '';
+        panel.removeEventListener('transitionend', onEnd);
+    };
+    panel.addEventListener('transitionend', onEnd);
 });
 
 modal && modal.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-backdrop')) {
-        modal.setAttribute('aria-hidden', 'true');
+        if (!panel) { modal.setAttribute('aria-hidden', 'true'); return; }
+        panel.classList.remove('expanded');
+        const onEnd = () => {
+            modal.setAttribute('aria-hidden', 'true');
+            panel.style.left = '';
+            panel.style.top = '';
+            panel.style.width = '';
+            panel.style.height = '';
+            panel.removeEventListener('transitionend', onEnd);
+        };
+        panel.addEventListener('transitionend', onEnd);
     }
 });
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal && modal.getAttribute('aria-hidden') === 'false') {
-        modal.setAttribute('aria-hidden', 'true');
+        if (!panel) { modal.setAttribute('aria-hidden', 'true'); return; }
+        panel.classList.remove('expanded');
+        const onEnd = () => {
+            modal.setAttribute('aria-hidden', 'true');
+            panel.style.left = '';
+            panel.style.top = '';
+            panel.style.width = '';
+            panel.style.height = '';
+            panel.removeEventListener('transitionend', onEnd);
+        };
+        panel.addEventListener('transitionend', onEnd);
     }
 });
