@@ -25,19 +25,57 @@
             <p class="page-copy">A selection of projects and experiments. Click any card to view details.</p>
 
             <div class="page-grid" style="margin-top:24px">
-                <article class="info-card project-card">
-                    <h2>Zenix.SG</h2>
-                    <p class="page-copy">Server hosting setup, deployment, and maintenance for reliable multiplayer
-                        experiences.</p>
-                    <p class="tag">Server Hosting</p>
+                <article class="info-card project-card" data-project-id="zenix">
+                    <div class="project-banner">
+                        <img src="../Files/Images/placeholder.png" alt="Zenix.SG banner">
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <div class="project-icon"><img src="../Files/Images/placeholder.png" alt="Zenix.SG icon"></div>
+                            <div class="project-title">Zenix.SG <span class="tag">Server Hosting</span></div>
+                        </div>
+
+                        <p class="project-desc">Server hosting setup, deployment, and maintenance for reliable multiplayer experiences.</p>
+
+                        <div class="project-footer">
+                            <button class="view-project" data-project="zenix">View Project →</button>
+                        </div>
+                    </div>
                 </article>
 
-                <article class="info-card project-card">
-                    <h2>Hyper Studios</h2>
-                    <p class="page-copy">Minecraft server development: plugins, features, and community tooling for
-                        custom gameplay.</p>
-                    <p class="tag">Minecraft Server</p>
+                <article class="info-card project-card" data-project-id="hyper">
+                    <div class="project-banner">
+                        <img src="../Files/Images/placeholder.png" alt="Hyper Studios banner">
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <div class="project-icon"><img src="../Files/Images/placeholder.png" alt="Hyper Studios icon"></div>
+                            <div class="project-title">Hyper Studios <span class="tag">Minecraft Server</span></div>
+                        </div>
+
+                        <p class="project-desc">Minecraft server development: plugins, features, and community tooling for custom gameplay.</p>
+
+                        <div class="project-footer">
+                            <button class="view-project" data-project="hyper">View Project →</button>
+                        </div>
+                    </div>
                 </article>
+            </div>
+        
+            <!-- Modal -->
+            <div id="project-modal" class="modal" aria-hidden="true">
+                <div class="modal-backdrop"></div>
+                <div class="modal-panel" role="dialog" aria-modal="true">
+                    <button class="modal-close" aria-label="Close">✕</button>
+                    <div class="modal-banner"><img src="../Files/Images/placeholder.png" alt="Project banner"></div>
+                    <div class="modal-content">
+                        <h2 class="modal-title">Project Title</h2>
+                        <p class="modal-subtitle">Project type</p>
+                        <p class="modal-desc">Longer project description goes here.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
