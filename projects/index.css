@@ -124,6 +124,10 @@ body {
     display: block;
 }
 
+.project-tags--below {
+    padding: 12px 14px 0;
+}
+
 .project-body {
     padding: 12px 14px;
     display: flex;
@@ -170,7 +174,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 7px;
-    margin-top: 1px;
 }
 
 .project-tag {
