@@ -306,7 +306,9 @@ a {
 
 .form-actions {
     display: flex;
+    gap: 12px;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .form-status {
@@ -322,6 +324,32 @@ a {
 .form-status.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.sent-message-panel {
+    display: grid;
+    gap: 14px;
+    margin-top: 6px;
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(34, 211, 238, 0.18);
+    background: rgba(2, 6, 23, 0.5);
+}
+
+.sent-message-panel h2 {
+    font-size: 20px;
+}
+
+.sent-message-content {
+    display: grid;
+    gap: 10px;
+    color: var(--secondary);
+    line-height: 1.65;
+    word-break: break-word;
+}
+
+.sent-message-content strong {
+    color: var(--text);
 }
 
 .social-panel {
@@ -410,5 +438,10 @@ a {
 
     .form-actions {
         justify-content: stretch;
+    }
+
+    .form-actions .button-primary,
+    .form-actions .button-secondary {
+        width: 100%;
     }
 }

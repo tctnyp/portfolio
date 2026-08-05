@@ -42,7 +42,8 @@
                         </label>
                         <label class="field">
                             <span>Phone Number</span>
-                            <input type="tel" name="phone" placeholder="+65 9000 0000" autocomplete="tel">
+                            <input type="tel" name="phone" placeholder="+65 9000 0000" autocomplete="tel"
+                                inputmode="tel">
                         </label>
                         <label class="field">
                             <span>Subject</span>
@@ -56,10 +57,18 @@
                     </div>
 
                     <div class="form-actions">
+                        <button class="button-secondary" type="button" id="view-message-button" hidden>
+                            View Sent Message
+                        </button>
                         <button class="button-primary" type="submit">Send Message</button>
                     </div>
 
                     <p class="form-status" id="form-status" aria-live="polite"></p>
+
+                    <div class="sent-message-panel" id="sent-message-panel" hidden>
+                        <h2>Sent Message</h2>
+                        <div class="sent-message-content" id="sent-message-content"></div>
+                    </div>
                 </form>
 
                 <div class="social-panel">
