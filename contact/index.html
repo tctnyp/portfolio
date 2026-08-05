@@ -29,7 +29,7 @@
             </div>
 
             <div class="contact-grid">
-                <form class="contact-form" action="#" method="post">
+                <form class="contact-form" id="contact-form">
                     <div class="form-grid">
                         <label class="field">
                             <span>Name</span>
@@ -58,6 +58,8 @@
                     <div class="form-actions">
                         <button class="button-primary" type="submit">Send Message</button>
                     </div>
+
+                    <p class="form-status" id="form-status" aria-live="polite"></p>
                 </form>
 
                 <div class="social-panel">
@@ -126,6 +128,7 @@
     </main>
 
     <script type="module" src="../script.js"></script>
+    <script type="module" src="./index.js"></script>
 </body>
 
 </html>
