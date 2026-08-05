@@ -16,6 +16,15 @@ const projects = [
         banner: '../Files/Images/placeholder.png',
         icon: '../Files/Images/placeholder.png',
         desc: 'Minecraft server development: plugins, features, and community tooling for custom gameplay, moderation systems, and performance optimizations.'
+    },
+    {
+        id: 'hyperxutility',
+        title: 'HyperXUtility',
+        subtitle: 'Discord Bot',
+        tags: ['Discord', 'Automation', 'Utilities'],
+        banner: '../Files/Images/placeholder.png',
+        icon: '../Files/Images/placeholder.png',
+        desc: 'A Discord utility bot for server automation, moderation helpers, and quick tools that keep community management fast and organized.'
     }
 ];
 
