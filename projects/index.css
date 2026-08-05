@@ -257,10 +257,18 @@ body {
 
 /* Responsive overrides */
 @media (max-width: 900px) {
+    .navbar {
+        padding: 0 20px;
+    }
+
     .nav-links {
-        gap: 18px;
-        flex-wrap: wrap;
+        gap: 16px;
+        flex-wrap: nowrap;
         justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 14px;
     }
 
     .page-grid {
