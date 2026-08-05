@@ -3,6 +3,7 @@ const projects = [
         id: 'zenix',
         title: 'Zenix.SG',
         subtitle: 'Server Hosting',
+        tags: ['Hosting', 'Deployment', 'Servers'],
         banner: '../Files/Images/placeholder.png',
         icon: '../Files/Images/placeholder.png',
         desc: 'Server hosting setup, deployment, and maintenance for reliable multiplayer experiences. Includes backups, monitoring, and automated deployments.'
@@ -11,6 +12,7 @@ const projects = [
         id: 'hyper',
         title: 'Hyper Studios',
         subtitle: 'Minecraft Server',
+        tags: ['Minecraft', 'Hosting', 'Community'],
         banner: '../Files/Images/placeholder.png',
         icon: '../Files/Images/placeholder.png',
         desc: 'Minecraft server development: plugins, features, and community tooling for custom gameplay, moderation systems, and performance optimizations.'
@@ -29,7 +31,12 @@ if (projectsGrid) {
             <div class="project-body">
                 <div class="project-meta">
                     <div class="project-icon"><img src="${project.icon}" alt="${project.title} icon"></div>
-                    <div class="project-title">${project.title} <span class="tag">${project.subtitle}</span></div>
+                    <div class="project-heading">
+                        <div class="project-title">${project.title}</div>
+                        <div class="project-tags">
+                            ${project.tags.map((tag) => `<span class="project-tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
                 </div>
 
                 <p class="project-desc">${project.desc}</p>
