@@ -1,31 +1,51 @@
-function highlightCurrentPage() {
-    const currentPath = new URL(window.location.href).pathname.replace(/index\.html$/, "").replace(/\/+$/, "/");
-
-    document.querySelectorAll(".nav-links a").forEach((link) => {
-        const linkPath = new URL(link.href, window.location.href).pathname.replace(/index\.html$/, "").replace(/\/+$/, "/");
-        link.classList.toggle("active", linkPath === currentPath);
-    });
-}
-
-highlightCurrentPage();
-
-// Modal project view
-const projects = {
-    zenix: {
+const projects = [
+    {
+        id: 'zenix',
         title: 'Zenix.SG',
         subtitle: 'Server Hosting',
         banner: '../Files/Images/placeholder.png',
         icon: '../Files/Images/placeholder.png',
         desc: 'Server hosting setup, deployment, and maintenance for reliable multiplayer experiences. Includes backups, monitoring, and automated deployments.'
     },
-    hyper: {
+    {
+        id: 'hyper',
         title: 'Hyper Studios',
         subtitle: 'Minecraft Server',
         banner: '../Files/Images/placeholder.png',
         icon: '../Files/Images/placeholder.png',
         desc: 'Minecraft server development: plugins, features, and community tooling for custom gameplay, moderation systems, and performance optimizations.'
     }
-};
+];
+
+const projectsGrid = document.getElementById('projects-grid');
+
+if (projectsGrid) {
+    projectsGrid.innerHTML = projects.map((project) => `
+        <article class="info-card project-card" data-project-id="${project.id}">
+            <div class="project-banner">
+                <img src="${project.banner}" alt="${project.title} banner">
+            </div>
+
+            <div class="project-body">
+                <div class="project-meta">
+                    <div class="project-icon"><img src="${project.icon}" alt="${project.title} icon"></div>
+                    <div class="project-title">${project.title} <span class="tag">${project.subtitle}</span></div>
+                </div>
+
+                <p class="project-desc">${project.desc}</p>
+
+                <div class="project-footer">
+                    <button class="view-project" data-project="${project.id}">View Project →</button>
+                </div>
+            </div>
+        </article>
+    `).join('');
+}
+
+const projectMap = projects.reduce((map, project) => {
+    map[project.id] = project;
+    return map;
+}, {});
 
 const modal = document.getElementById('project-modal');
 const modalTitle = modal && modal.querySelector('.modal-title');
@@ -55,17 +75,19 @@ function closeModal() {
     modalPanel.addEventListener('transitionend', onEnd);
 }
 
-document.querySelectorAll('.view-project').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const id = btn.dataset.project;
-        const data = projects[id];
-        if (!data) return;
-        if (modalTitle) modalTitle.textContent = data.title;
-        if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
-        if (modalDesc) modalDesc.textContent = data.desc;
-        if (modalBanner) modalBanner.src = data.banner;
-        openModal();
-    });
+projectsGrid && projectsGrid.addEventListener('click', (event) => {
+    const btn = event.target.closest('.view-project');
+    if (!btn) return;
+
+    const id = btn.dataset.project;
+    const data = projectMap[id];
+    if (!data) return;
+
+    if (modalTitle) modalTitle.textContent = data.title;
+    if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
+    if (modalDesc) modalDesc.textContent = data.desc;
+    if (modalBanner) modalBanner.src = data.banner;
+    openModal();
 });
 
 // Close handlers

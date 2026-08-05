@@ -1,13 +1,10 @@
-// Highlight current page in navbar
+function highlightCurrentPage() {
+    const currentPath = new URL(window.location.href).pathname.replace(/index\.html$/, "").replace(/\/+$/, "/");
 
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+        const linkPath = new URL(link.href, window.location.href).pathname.replace(/index\.html$/, "").replace(/\/+$/, "/");
+        link.classList.toggle("active", linkPath === currentPath);
+    });
+}
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-
-    if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-    } else {
-        link.classList.remove("active");
-    }
-
-});
+highlightCurrentPage();

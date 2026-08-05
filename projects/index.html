@@ -24,49 +24,7 @@
             <h1 class="page-title">Projects</h1>
             <p class="page-copy">A selection of projects and experiments. Click any card to view details.</p>
 
-            <div class="page-grid" style="margin-top:24px">
-                <article class="info-card project-card" data-project-id="zenix">
-                    <div class="project-banner">
-                        <img src="../Files/Images/placeholder.png" alt="Zenix.SG banner">
-                    </div>
-
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <div class="project-icon"><img src="../Files/Images/placeholder.png" alt="Zenix.SG icon">
-                            </div>
-                            <div class="project-title">Zenix.SG <span class="tag">Server Hosting</span></div>
-                        </div>
-
-                        <p class="project-desc">Server hosting setup, deployment, and maintenance for reliable
-                            multiplayer experiences.</p>
-
-                        <div class="project-footer">
-                            <button class="view-project" data-project="zenix">View Project →</button>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="info-card project-card" data-project-id="hyper">
-                    <div class="project-banner">
-                        <img src="../Files/Images/placeholder.png" alt="Hyper Studios banner">
-                    </div>
-
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <div class="project-icon"><img src="../Files/Images/placeholder.png"
-                                    alt="Hyper Studios icon"></div>
-                            <div class="project-title">Hyper Studios <span class="tag">Minecraft Server</span></div>
-                        </div>
-
-                        <p class="project-desc">Minecraft server development: plugins, features, and community tooling
-                            for custom gameplay.</p>
-
-                        <div class="project-footer">
-                            <button class="view-project" data-project="hyper">View Project →</button>
-                        </div>
-                    </div>
-                </article>
-            </div>
+            <div id="projects-grid" class="page-grid projects-grid"></div>
 
             <!-- Modal -->
             <div id="project-modal" class="modal" aria-hidden="true">
@@ -84,6 +42,7 @@
         </section>
     </main>
 
+    <script type="module" src="../script.js"></script>
     <script type="module" src="./index.js"></script>
 </body>
 
