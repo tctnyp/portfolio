@@ -197,24 +197,25 @@ body {
 
 .modal-panel {
     position: fixed;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 0;
+    left: 50%;
+    top: 50%;
+    width: min(900px, 96%);
+    max-width: 900px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 20px;
     overflow: hidden;
     z-index: 2;
-    transition: left 320ms cubic-bezier(.2, .9, .2, 1), top 320ms cubic-bezier(.2, .9, .2, 1), width 320ms cubic-bezier(.2, .9, .2, 1), height 320ms cubic-bezier(.2, .9, .2, 1), transform 320ms cubic-bezier(.2, .9, .2, 1);
+    transform: translate(-50%, -50%) scale(0.92);
+    opacity: 0;
+    transition: transform 280ms cubic-bezier(.2, .9, .2, 1), opacity 280ms ease;
+    pointer-events: none;
 }
 
 .modal-panel.expanded {
-    left: 50% !important;
-    top: 50% !important;
-    width: min(900px, 96%) !important;
-    height: auto !important;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .modal-close {
@@ -273,7 +274,5 @@ body {
 
     .modal-panel.expanded {
         width: 96%;
-        height: auto;
-        transform: translate(-50%, -50%);
     }
 }

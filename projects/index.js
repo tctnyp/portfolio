@@ -32,6 +32,28 @@ const modalTitle = modal && modal.querySelector('.modal-title');
 const modalSubtitle = modal && modal.querySelector('.modal-subtitle');
 const modalDesc = modal && modal.querySelector('.modal-desc');
 const modalBanner = modal && modal.querySelector('.modal-banner img');
+const modalPanel = modal && modal.querySelector('.modal-panel');
+const modalClose = modal && modal.querySelector('.modal-close');
+
+function openModal() {
+    if (!modal || !modalPanel) return;
+    modal.setAttribute('aria-hidden', 'false');
+    requestAnimationFrame(() => {
+        modalPanel.classList.add('expanded');
+    });
+}
+
+function closeModal() {
+    if (!modal || !modalPanel) return;
+    modalPanel.classList.remove('expanded');
+
+    const onEnd = () => {
+        modal.setAttribute('aria-hidden', 'true');
+        modalPanel.removeEventListener('transitionend', onEnd);
+    };
+
+    modalPanel.addEventListener('transitionend', onEnd);
+}
 
 document.querySelectorAll('.view-project').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -42,76 +64,21 @@ document.querySelectorAll('.view-project').forEach(btn => {
         if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
         if (modalDesc) modalDesc.textContent = data.desc;
         if (modalBanner) modalBanner.src = data.banner;
-        // animate from card -> modal
-        const card = btn.closest('.project-card');
-        const panel = modal.querySelector('.modal-panel');
-        const rect = card.getBoundingClientRect();
-
-        // set initial panel position to card
-        panel.style.left = rect.left + 'px';
-        panel.style.top = rect.top + 'px';
-        panel.style.width = rect.width + 'px';
-        panel.style.height = rect.height + 'px';
-        panel.classList.remove('expanded');
-
-        modal.setAttribute('aria-hidden', 'false');
-
-        // allow layout then expand to center
-        requestAnimationFrame(() => {
-            // Force reflow
-            void panel.offsetWidth;
-            panel.classList.add('expanded');
-        });
+        openModal();
     });
 });
 
 // Close handlers
-const panel = modal && modal.querySelector('.modal-panel');
-modal && modal.querySelector('.modal-close').addEventListener('click', () => {
-    if (!panel) { modal.setAttribute('aria-hidden', 'true'); return; }
-    // animate back to original card size/position by removing expanded
-    panel.classList.remove('expanded');
-
-    // after transition, hide modal and clear inline styles
-    const onEnd = () => {
-        modal.setAttribute('aria-hidden', 'true');
-        panel.style.left = '';
-        panel.style.top = '';
-        panel.style.width = '';
-        panel.style.height = '';
-        panel.removeEventListener('transitionend', onEnd);
-    };
-    panel.addEventListener('transitionend', onEnd);
-});
+modalClose && modalClose.addEventListener('click', closeModal);
 
 modal && modal.addEventListener('click', (e) => {
     if (e.target.classList.contains('modal-backdrop')) {
-        if (!panel) { modal.setAttribute('aria-hidden', 'true'); return; }
-        panel.classList.remove('expanded');
-        const onEnd = () => {
-            modal.setAttribute('aria-hidden', 'true');
-            panel.style.left = '';
-            panel.style.top = '';
-            panel.style.width = '';
-            panel.style.height = '';
-            panel.removeEventListener('transitionend', onEnd);
-        };
-        panel.addEventListener('transitionend', onEnd);
+        closeModal();
     }
 });
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal && modal.getAttribute('aria-hidden') === 'false') {
-        if (!panel) { modal.setAttribute('aria-hidden', 'true'); return; }
-        panel.classList.remove('expanded');
-        const onEnd = () => {
-            modal.setAttribute('aria-hidden', 'true');
-            panel.style.left = '';
-            panel.style.top = '';
-            panel.style.width = '';
-            panel.style.height = '';
-            panel.removeEventListener('transitionend', onEnd);
-        };
-        panel.addEventListener('transitionend', onEnd);
+        closeModal();
     }
 });
