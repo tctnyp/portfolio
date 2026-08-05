@@ -26,9 +26,10 @@
 
             <div id="projects-grid" class="page-grid projects-grid">
                 <article class="info-card project-card" data-project-id="zenix" data-title="Zenix.SG"
-                    data-subtitle="Server Hosting" data-rank="Support Team"
+                    data-subtitle="Server Hosting" data-rank="Support Team" data-status="Online"
                     data-banner="../Files/Images/placeholder.png" data-icon="../Files/Images/zenix.png"
                     data-desc="High-performance hosting and carefully selected hardware, backed by real technical support from Singapore."
+                    data-stats='[{"label":"Players","value":"Set manually"},{"label":"Uptime","value":"99.9%"},{"label":"Region","value":"Singapore"},{"label":"Focus","value":"Hosting and support"}]'
                     data-links='[{"label":"Discord","value":"https://discord.gg/qU6UwmhUW2"},{"label":"Website","value":"https://zenix.sg","href":"https://zenix.sg/"}]'>
                     <div class="project-banner">
                         <img src="../Files/Images/placeholder.png" alt="Zenix.SG banner">
@@ -44,7 +45,10 @@
                         <div class="project-meta">
                             <div class="project-icon"><img src="../Files/Images/zenix.png" alt="Zenix.SG icon"></div>
                             <div class="project-heading">
-                                <div class="project-title">Zenix.SG</div>
+                                <div class="project-title-row">
+                                    <div class="project-title">Zenix.SG</div>
+                                    <div class="project-status status-online">Status: Online</div>
+                                </div>
                                 <div class="project-subtitle">Server Hosting</div>
                                 <div class="project-rank">Rank: Support Team</div>
                             </div>
@@ -60,10 +64,11 @@
                 </article>
 
                 <article class="info-card project-card" data-project-id="hyper" data-title="Hyper Studios"
-                    data-subtitle="Minecraft Server" data-rank="Co-owner" data-banner="../Files/Images/hyperbanner.png"
-                    data-icon="../Files/Images/hyper.png"
+                    data-subtitle="Minecraft Server" data-rank="Co-owner" data-status="Online"
+                    data-banner="../Files/Images/hyperbanner.png" data-icon="../Files/Images/hyper.png"
                     data-desc="What began as a small passion project has grown into Hyper — one of the fastest-growing and most exciting Minecraft server networks. Available on both Minecraft Java Edition and Eagler, Hyper connects players worldwide with thrilling game modes like BedWars, SkyBlock, Survival, and The Prototype. And we’re just getting started! Dive into a unique progression-based experience like no other. Join the hype. Play. Compete. Dominate."
-                    data-links='[{"label":"Discord","value":"https://discord.gg/hynw","href":"https://discord.gg/hynw"},{"label":"IP","value":"mc.hyper-network.net","href":"mc.hyper-network.net"}, {"label":"Versions","value":"1.8-26.1","href":"https://hyper-network.net/versions"}]'>
+                    data-stats='[{"label":"Players","value":"Set manually"},{"label":"Platform","value":"Java & Eagler"},{"label":"Game Modes","value":"BedWars, SkyBlock, Survival"},{"label":"Role","value":"Co-owner"}]'
+                    data-links='[{"label":"Discord","value":"https://discord.gg/hynw","href":"https://discord.gg/hynw"},{"label":"IP","value":"mc.hyper-network.net"}, {"label":"Versions","value":"1.8-26.1","href":"https://hyper-network.net/versions"}]'>
                     <div class="project-banner">
                         <img src="../Files/Images/hyperbanner.png" alt="Hyper Studios banner">
                     </div>
@@ -79,7 +84,10 @@
                             <div class="project-icon"><img src="../Files/Images/hyper.png" alt="Hyper Studios icon">
                             </div>
                             <div class="project-heading">
-                                <div class="project-title">Hyper Studios</div>
+                                <div class="project-title-row">
+                                    <div class="project-title">Hyper Studios</div>
+                                    <div class="project-status status-online">Status: Online</div>
+                                </div>
                                 <div class="project-subtitle">Minecraft Server</div>
                                 <div class="project-rank">Rank: Co-owner</div>
                             </div>
@@ -98,14 +106,15 @@
                 </article>
 
                 <article class="info-card project-card" data-project-id="hyperxutility" data-title="HyperXUtility"
-                    data-subtitle="Discord Bot" data-rank="Owner" data-banner="../Files/Images/placeholder.png"
-                    data-icon="../Files/Images/placeholder.png" data-desc="HyperXUtility was made with a single goal in mind. To replace ALL
+                    data-subtitle="Discord Bot" data-rank="Owner" data-status="Maintenance"
+                    data-banner="../Files/Images/placeholder.png" data-icon="../Files/Images/placeholder.png" data-desc="HyperXUtility was made with a single goal in mind. To replace ALL
                             discord bots. I've seen many bots like Sapphire, Dyno, Jockie Music, Carl bot and more.
                             However, many of their features were either paid or lacking. As such, people had to invite
                             multiple bots to get the best out of each bot. However, I felt that we shouldn't need to
                             invite so many bots. Rather, 1 bot should be enough. Hence, I made HyperXUtility. It is a
                             utility bot which combined Jockie Music, Sapphire, Dyno, CarlBot, Invite Tracker, Ticket
                             Tool and many more."
+                    data-stats='[{"label":"Guilds","value":"Set manually"},{"label":"Features","value":"Automation, moderation, utility"},{"label":"Commands","value":"Multi-purpose"},{"label":"Role","value":"Owner"}]'
                     data-links='[{"label":"Discord","value":"https://discord.gg/hynw","href":"https://discord.gg/hynw"},{"label":"Website","value":"https://hyper-network.net","href":"https://hyper-network.net"}]'>
                     <div class="project-banner">
                         <img src="../Files/Images/placeholder.png" alt="HyperXUtility banner">
@@ -123,7 +132,10 @@
                                     alt="HyperXUtility icon">
                             </div>
                             <div class="project-heading">
-                                <div class="project-title">HyperXUtility</div>
+                                <div class="project-title-row">
+                                    <div class="project-title">HyperXUtility</div>
+                                    <div class="project-status status-maintenance">Status: Maintenance</div>
+                                </div>
                                 <div class="project-subtitle">Discord Bot</div>
                                 <div class="project-rank">Rank: Owner</div>
                             </div>
@@ -131,6 +143,200 @@
 
                         <p class="project-desc">A Discord utility bot for server automation, moderation helpers, and
                             quick tools that keep community management fast and organized.</p>
+
+                        <div class="project-footer">
+                            <button class="view-project">View Project →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="info-card project-card" data-project-id="voidsent-smp" data-title="Voidsent SMP"
+                    data-subtitle="Minecraft SMP" data-rank="Admin" data-status="Online"
+                    data-banner="../Files/Images/placeholder.png" data-icon="../Files/Images/placeholder.png"
+                    data-desc="Voidsent SMP is a survival multiplayer community focused on stable performance, active moderation, and a clear player experience."
+                    data-stats='[{"label":"Players","value":"Set manually"},{"label":"Uptime","value":"99.8%"},{"label":"Mode","value":"SMP"},{"label":"Role","value":"Admin"}]'
+                    data-links='[{"label":"Discord","value":"Invite link to be added"},{"label":"Server","value":"IP can be set manually"}]'>
+                    <div class="project-banner">
+                        <img src="../Files/Images/placeholder.png" alt="Voidsent SMP banner">
+                    </div>
+
+                    <div class="project-tags project-tags--below">
+                        <span class="project-tag">SMP</span>
+                        <span class="project-tag">Moderation</span>
+                        <span class="project-tag">Community</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <div class="project-icon"><img src="../Files/Images/placeholder.png"
+                                    alt="Voidsent SMP icon"></div>
+                            <div class="project-heading">
+                                <div class="project-title-row">
+                                    <div class="project-title">Voidsent SMP</div>
+                                    <div class="project-status status-online">Status: Online</div>
+                                </div>
+                                <div class="project-subtitle">Minecraft SMP</div>
+                                <div class="project-rank">Rank: Admin</div>
+                            </div>
+                        </div>
+
+                        <p class="project-desc">Voidsent SMP is a survival multiplayer community focused on stable
+                            performance, active moderation, and a clear player experience.</p>
+
+                        <div class="project-footer">
+                            <button class="view-project">View Project →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="info-card project-card" data-project-id="ggsmp20" data-title="GGSMP2.0"
+                    data-subtitle="Minecraft Server" data-rank="Manager" data-status="Maintenance"
+                    data-banner="../Files/Images/placeholder.png" data-icon="../Files/Images/placeholder.png"
+                    data-desc="GGSMP2.0 is presented as a managed server project with a focus on structure, reliability, and scalable community operations."
+                    data-stats='[{"label":"Players","value":"Set manually"},{"label":"Status","value":"Maintenance window"},{"label":"Focus","value":"Server management"},{"label":"Role","value":"Manager"}]'
+                    data-links='[{"label":"Discord","value":"Invite link to be added"},{"label":"Server","value":"Details can be added manually"}]'>
+                    <div class="project-banner">
+                        <img src="../Files/Images/placeholder.png" alt="GGSMP2.0 banner">
+                    </div>
+
+                    <div class="project-tags project-tags--below">
+                        <span class="project-tag">Community</span>
+                        <span class="project-tag">Operations</span>
+                        <span class="project-tag">Management</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <div class="project-icon"><img src="../Files/Images/placeholder.png" alt="GGSMP2.0 icon">
+                            </div>
+                            <div class="project-heading">
+                                <div class="project-title-row">
+                                    <div class="project-title">GGSMP2.0</div>
+                                    <div class="project-status status-maintenance">Status: Maintenance</div>
+                                </div>
+                                <div class="project-subtitle">Minecraft Server</div>
+                                <div class="project-rank">Rank: Manager</div>
+                            </div>
+                        </div>
+
+                        <p class="project-desc">GGSMP2.0 is presented as a managed server project with a focus on
+                            structure, reliability, and scalable community operations.</p>
+
+                        <div class="project-footer">
+                            <button class="view-project">View Project →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="info-card project-card" data-project-id="water-network" data-title="Water Network"
+                    data-subtitle="Minecraft Network" data-rank="Manager" data-status="Online"
+                    data-banner="../Files/Images/placeholder.png" data-icon="../Files/Images/placeholder.png"
+                    data-desc="Water Network is a network-style project aimed at showing polished presentation, operational clarity, and a strong community foundation."
+                    data-stats='[{"label":"Players","value":"Set manually"},{"label":"Uptime","value":"99.7%"},{"label":"Focus","value":"Network management"},{"label":"Role","value":"Manager"}]'
+                    data-links='[{"label":"Discord","value":"Invite link to be added"},{"label":"Website","value":"Add project website"}]'>
+                    <div class="project-banner">
+                        <img src="../Files/Images/placeholder.png" alt="Water Network banner">
+                    </div>
+
+                    <div class="project-tags project-tags--below">
+                        <span class="project-tag">Network</span>
+                        <span class="project-tag">Community</span>
+                        <span class="project-tag">Operations</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <div class="project-icon"><img src="../Files/Images/placeholder.png"
+                                    alt="Water Network icon"></div>
+                            <div class="project-heading">
+                                <div class="project-title-row">
+                                    <div class="project-title">Water Network</div>
+                                    <div class="project-status status-online">Status: Online</div>
+                                </div>
+                                <div class="project-subtitle">Minecraft Network</div>
+                                <div class="project-rank">Rank: Manager</div>
+                            </div>
+                        </div>
+
+                        <p class="project-desc">Water Network is a network-style project aimed at showing polished
+                            presentation, operational clarity, and a strong community foundation.</p>
+
+                        <div class="project-footer">
+                            <button class="view-project">View Project →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="info-card project-card" data-project-id="webmc" data-title="WebMC"
+                    data-subtitle="Minecraft Server" data-rank="Helper" data-status="Discontinued"
+                    data-banner="../Files/Images/placeholder.png" data-icon="../Files/Images/placeholder.png"
+                    data-desc="WebMC highlights support work, community interaction, and the type of operational experience that helps shape reliable public-facing projects."
+                    data-stats='[{"label":"Players","value":"Set manually"},{"label":"Support","value":"Community help"},{"label":"Focus","value":"Player-facing experience"},{"label":"Role","value":"Helper"}]'
+                    data-links='[{"label":"Discord","value":"Invite link to be added"},{"label":"Archive","value":"Project closed"}]'>
+                    <div class="project-banner">
+                        <img src="../Files/Images/placeholder.png" alt="WebMC banner">
+                    </div>
+
+                    <div class="project-tags project-tags--below">
+                        <span class="project-tag">Support</span>
+                        <span class="project-tag">Community</span>
+                        <span class="project-tag">Archive</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <div class="project-icon"><img src="../Files/Images/placeholder.png" alt="WebMC icon"></div>
+                            <div class="project-heading">
+                                <div class="project-title-row">
+                                    <div class="project-title">WebMC</div>
+                                    <div class="project-status status-discontinued">Status: Discontinued</div>
+                                </div>
+                                <div class="project-subtitle">Minecraft Server</div>
+                                <div class="project-rank">Rank: Helper</div>
+                            </div>
+                        </div>
+
+                        <p class="project-desc">WebMC highlights support work, community interaction, and the type of
+                            operational experience that helps shape reliable public-facing projects.</p>
+
+                        <div class="project-footer">
+                            <button class="view-project">View Project →</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="info-card project-card" data-project-id="alphrix-network" data-title="Alphrix Network"
+                    data-subtitle="Minecraft Network" data-rank="Owner" data-status="Online"
+                    data-banner="../Files/Images/placeholder.png" data-icon="../Files/Images/placeholder.png"
+                    data-desc="Alphrix Network is positioned as an owner-level project, showing leadership, planning, and a full network-style portfolio presentation."
+                    data-stats='[{"label":"Players","value":"Set manually"},{"label":"Capacity","value":"Scalable"},{"label":"Focus","value":"Ownership and direction"},{"label":"Role","value":"Owner"}]'
+                    data-links='[{"label":"Discord","value":"Invite link to be added"},{"label":"Website","value":"Add project website"}]'>
+                    <div class="project-banner">
+                        <img src="../Files/Images/placeholder.png" alt="Alphrix Network banner">
+                    </div>
+
+                    <div class="project-tags project-tags--below">
+                        <span class="project-tag">Network</span>
+                        <span class="project-tag">Leadership</span>
+                        <span class="project-tag">Portfolio</span>
+                    </div>
+
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <div class="project-icon"><img src="../Files/Images/placeholder.png"
+                                    alt="Alphrix Network icon"></div>
+                            <div class="project-heading">
+                                <div class="project-title-row">
+                                    <div class="project-title">Alphrix Network</div>
+                                    <div class="project-status status-online">Status: Online</div>
+                                </div>
+                                <div class="project-subtitle">Minecraft Network</div>
+                                <div class="project-rank">Rank: Owner</div>
+                            </div>
+                        </div>
+
+                        <p class="project-desc">Alphrix Network is positioned as an owner-level project, showing
+                            leadership, planning, and a full network-style portfolio presentation.</p>
 
                         <div class="project-footer">
                             <button class="view-project">View Project →</button>
@@ -146,10 +352,14 @@
                     <button class="modal-close" aria-label="Close">✕</button>
                     <div class="modal-banner"><img src="../Files/Images/placeholder.png" alt="Project banner"></div>
                     <div class="modal-content">
-                        <h2 class="modal-title">Project Title</h2>
+                        <div class="modal-title-row">
+                            <h2 class="modal-title">Project Title</h2>
+                            <div class="modal-status status-online">Status: Online</div>
+                        </div>
                         <p class="modal-subtitle">Project type</p>
                         <p class="modal-rank">Rank: <span>Server role</span></p>
                         <p class="modal-desc">Longer project description goes here.</p>
+                        <div class="modal-stats" aria-label="Project stats"></div>
                         <div class="modal-links" aria-label="Project links"></div>
                     </div>
                 </div>

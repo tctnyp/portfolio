@@ -5,9 +5,11 @@ function getProjectData(card) {
         title: card.dataset.title || '',
         subtitle: card.dataset.subtitle || '',
         rank: card.dataset.rank || '',
+        status: card.dataset.status || 'Online',
         desc: card.dataset.desc || '',
         banner: card.dataset.banner || '',
-        links: parseLinks(card.dataset.links || '')
+        links: parseLinks(card.dataset.links || ''),
+        stats: parseLinks(card.dataset.stats || '')
     };
 }
 
@@ -27,10 +29,55 @@ const modalTitle = modal && modal.querySelector('.modal-title');
 const modalSubtitle = modal && modal.querySelector('.modal-subtitle');
 const modalRank = modal && modal.querySelector('.modal-rank span');
 const modalDesc = modal && modal.querySelector('.modal-desc');
+const modalStatus = modal && modal.querySelector('.modal-status');
+const modalStats = modal && modal.querySelector('.modal-stats');
 const modalLinks = modal && modal.querySelector('.modal-links');
 const modalBanner = modal && modal.querySelector('.modal-banner img');
 const modalPanel = modal && modal.querySelector('.modal-panel');
 const modalClose = modal && modal.querySelector('.modal-close');
+
+function getStatusClass(status) {
+    const normalized = (status || '').toLowerCase();
+
+    if (normalized.includes('maint')) {
+        return 'status-maintenance';
+    }
+
+    if (normalized.includes('discontinued')) {
+        return 'status-discontinued';
+    }
+
+    return 'status-online';
+}
+
+function renderStats(stats) {
+    if (!modalStats) return;
+
+    modalStats.replaceChildren();
+
+    if (!Array.isArray(stats) || stats.length === 0) {
+        modalStats.hidden = true;
+        return;
+    }
+
+    modalStats.hidden = false;
+
+    for (const stat of stats) {
+        const item = document.createElement('article');
+        item.className = 'modal-stat';
+
+        const label = document.createElement('span');
+        label.className = 'modal-stat-label';
+        label.textContent = stat?.label || 'Stat';
+
+        const value = document.createElement('strong');
+        value.className = 'modal-stat-value';
+        value.textContent = stat?.value || '';
+
+        item.append(label, value);
+        modalStats.append(item);
+    }
+}
 
 function renderLinks(links) {
     if (!modalLinks) return;
@@ -103,6 +150,11 @@ projectsGrid && projectsGrid.addEventListener('click', (event) => {
     if (modalRank) modalRank.textContent = data.rank || 'Server role';
     if (modalDesc) modalDesc.textContent = data.desc;
     if (modalBanner) modalBanner.src = data.banner;
+    if (modalStatus) {
+        modalStatus.textContent = `Status: ${data.status}`;
+        modalStatus.className = `modal-status ${getStatusClass(data.status)}`;
+    }
+    renderStats(data.stats);
     renderLinks(data.links);
     openModal();
 });

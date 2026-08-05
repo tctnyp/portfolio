@@ -168,10 +168,50 @@ body {
     min-width: 0;
 }
 
+.project-title-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 .project-subtitle {
     color: var(--secondary);
     font-size: 13px;
     font-weight: 500;
+}
+
+.project-status,
+.modal-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.status-online {
+    color: #86efac;
+    background: rgba(34, 197, 94, 0.12);
+    border-color: rgba(34, 197, 94, 0.28);
+}
+
+.status-maintenance {
+    color: #fde68a;
+    background: rgba(245, 158, 11, 0.12);
+    border-color: rgba(245, 158, 11, 0.28);
+}
+
+.status-discontinued {
+    color: #fca5a5;
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.28);
 }
 
 .project-rank {
@@ -335,9 +375,17 @@ body {
     padding: 30px;
 }
 
+.modal-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 6px;
+}
+
 .modal-title {
     font-size: 24px;
-    margin-bottom: 6px;
+    margin-bottom: 0;
 }
 
 .modal-subtitle {
@@ -363,6 +411,37 @@ body {
     line-height: 1.6;
 }
 
+.modal-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.modal-stat {
+    padding: 14px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(17, 24, 39, 0.62);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modal-stat-label {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.modal-stat-value {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.4;
+}
+
 /* Responsive overrides */
 @media (max-width: 699px) {
     .projects-grid {
@@ -379,6 +458,15 @@ body {
 
     .modal-banner img {
         height: 180px;
+    }
+
+    .modal-title-row,
+    .project-title-row {
+        align-items: flex-start;
+    }
+
+    .modal-stats {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -408,5 +496,9 @@ body {
 
     .modal-panel.expanded {
         width: 96%;
+    }
+
+    .modal-stats {
+        grid-template-columns: 1fr;
     }
 }
