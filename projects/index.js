@@ -1,68 +1,13 @@
-const projects = [
-    {
-        id: 'zenix',
-        title: 'Zenix.SG',
-        subtitle: 'Server Hosting',
-        tags: ['Hosting', 'Deployment', 'Infrastructure'],
-        banner: '../Files/Images/placeholder.png',
-        icon: '../Files/Images/placeholder.png',
-        desc: 'Server hosting setup, deployment, and maintenance for reliable multiplayer experiences. Includes backups, monitoring, and automated deployments.'
-    },
-    {
-        id: 'hyper',
-        title: 'Hyper Studios',
-        subtitle: 'Minecraft Server',
-        tags: ['Minecraft', 'Server', 'Infrastructure'],
-        banner: '../Files/Images/hyperbanner.png',
-        icon: '../Files/Images/hyper.png',
-        desc: 'Hyper Network is a modern Minecraft network focused on delivering a polished, high-quality multiplayer experience. Built on powerful infrastructure and designed with long-term progression in mind, our servers combine performance, stability, and custom gameplay to create an experience unlike any other.'
-    },
-    {
-        id: 'hyperxutility',
-        title: 'HyperXUtility',
-        subtitle: 'Discord Bot',
-        tags: ['Discord', 'Automation', 'Utilities'],
-        banner: '../Files/Images/placeholder.png',
-        icon: '../Files/Images/placeholder.png',
-        desc: 'A Discord utility bot for server automation, moderation helpers, and quick tools that keep community management fast and organized.'
-    }
-];
-
 const projectsGrid = document.getElementById('projects-grid');
 
-if (projectsGrid) {
-    projectsGrid.innerHTML = projects.map((project) => `
-        <article class="info-card project-card" data-project-id="${project.id}">
-            <div class="project-banner">
-                <img src="${project.banner}" alt="${project.title} banner">
-            </div>
-
-            <div class="project-body">
-                <div class="project-meta">
-                    <div class="project-icon"><img src="${project.icon}" alt="${project.title} icon"></div>
-                    <div class="project-heading">
-                        <div class="project-title">${project.title}</div>
-                        <div class="project-subtitle">${project.subtitle}</div>
-                        <div class="project-tags">
-                            ${project.tags.map((tag) => `<span class="project-tag">${tag}</span>`).join('')}
-                        </div>
-                    </div>
-                </div>
-
-                <p class="project-desc">${project.desc}</p>
-
-                <div class="project-footer">
-                    <button class="view-project" data-project="${project.id}">View Project →</button>
-                </div>
-            </div>
-        </article>
-    `).join('');
+function getProjectData(card) {
+    return {
+        title: card.dataset.title || '',
+        subtitle: card.dataset.subtitle || '',
+        desc: card.dataset.desc || '',
+        banner: card.dataset.banner || ''
+    };
 }
-
-const projectMap = projects.reduce((map, project) => {
-    map[project.id] = project;
-    return map;
-}, {});
 
 const modal = document.getElementById('project-modal');
 const modalTitle = modal && modal.querySelector('.modal-title');
@@ -96,9 +41,10 @@ projectsGrid && projectsGrid.addEventListener('click', (event) => {
     const btn = event.target.closest('.view-project');
     if (!btn) return;
 
-    const id = btn.dataset.project;
-    const data = projectMap[id];
-    if (!data) return;
+    const card = btn.closest('.project-card');
+    if (!card) return;
+
+    const data = getProjectData(card);
 
     if (modalTitle) modalTitle.textContent = data.title;
     if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
