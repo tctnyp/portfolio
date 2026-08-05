@@ -4,6 +4,7 @@ function getProjectData(card) {
     return {
         title: card.dataset.title || '',
         subtitle: card.dataset.subtitle || '',
+        rank: card.dataset.rank || '',
         desc: card.dataset.desc || '',
         banner: card.dataset.banner || '',
         links: parseLinks(card.dataset.links || '')
@@ -24,6 +25,7 @@ function parseLinks(rawLinks) {
 const modal = document.getElementById('project-modal');
 const modalTitle = modal && modal.querySelector('.modal-title');
 const modalSubtitle = modal && modal.querySelector('.modal-subtitle');
+const modalRank = modal && modal.querySelector('.modal-rank span');
 const modalDesc = modal && modal.querySelector('.modal-desc');
 const modalLinks = modal && modal.querySelector('.modal-links');
 const modalBanner = modal && modal.querySelector('.modal-banner img');
@@ -98,6 +100,7 @@ projectsGrid && projectsGrid.addEventListener('click', (event) => {
 
     if (modalTitle) modalTitle.textContent = data.title;
     if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
+    if (modalRank) modalRank.textContent = data.rank || 'Server role';
     if (modalDesc) modalDesc.textContent = data.desc;
     if (modalBanner) modalBanner.src = data.banner;
     renderLinks(data.links);

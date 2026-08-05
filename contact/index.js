@@ -16,6 +16,7 @@ const sentMessagePanel = document.querySelector("#sent-message-panel");
 const sentMessageContent = document.querySelector("#sent-message-content");
 
 const phoneInput = contactForm?.querySelector('input[name="phone"]');
+const phonePattern = /^[\+]?[0-9]{0,3}\W?[\(]?[0-9]{3}[\)]?[-\s\. ]?[0-9]{3}[-\s\. ]?[0-9]{4,6}$/im;
 
 function isValidPhoneNumber(value) {
     const trimmedValue = value.trim();
@@ -24,12 +25,7 @@ function isValidPhoneNumber(value) {
         return true;
     }
 
-    if (!/^[+()\d\s-]+$/.test(trimmedValue)) {
-        return false;
-    }
-
-    const digitCount = trimmedValue.replace(/\D/g, "").length;
-    return digitCount >= 7 && digitCount <= 15;
+    return phonePattern.test(trimmedValue);
 }
 
 if (contactForm && formStatus) {
