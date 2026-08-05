@@ -43,23 +43,27 @@ function renderLinks(links) {
     modalLinks.hidden = false;
     for (const link of links) {
         const label = link?.label || link?.text || 'Link';
+        const value = link?.value || link?.href || link?.text || '';
         const href = link?.href || '';
+        const row = document.createElement('div');
+        row.className = 'modal-link-row';
 
-        if (!href) {
-            const textChip = document.createElement('span');
-            textChip.className = 'modal-link modal-link--text';
-            textChip.textContent = label;
-            modalLinks.append(textChip);
-            continue;
+        const labelSpan = document.createElement('span');
+        labelSpan.className = 'modal-link-label';
+        labelSpan.textContent = `${label}:`;
+
+        const valueNode = href ? document.createElement('a') : document.createElement('span');
+        valueNode.className = 'modal-link-value';
+        valueNode.textContent = value;
+
+        if (href) {
+            valueNode.href = href;
+            valueNode.target = '_blank';
+            valueNode.rel = 'noopener noreferrer';
         }
 
-        const anchor = document.createElement('a');
-        anchor.className = 'modal-link';
-        anchor.href = href;
-        anchor.target = '_blank';
-        anchor.rel = 'noopener noreferrer';
-        anchor.textContent = label;
-        modalLinks.append(anchor);
+        row.append(labelSpan, valueNode);
+        modalLinks.append(row);
     }
 }
 

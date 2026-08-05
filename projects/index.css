@@ -225,35 +225,35 @@ body {
 }
 
 .modal-links {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 10px;
     margin-top: 20px;
 }
 
-.modal-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+.modal-link-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
     padding: 10px 14px;
-    border-radius: 999px;
-    border: 1px solid rgba(34, 211, 238, 0.24);
+    border-radius: 16px;
+    border: 1px solid rgba(34, 211, 238, 0.22);
     background: rgba(239, 68, 68, 0.08);
+}
+
+.modal-link-label {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    min-width: 72px;
+}
+
+.modal-link-value {
     color: var(--text);
-    text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
-    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-}
-
-.modal-link:hover {
-    transform: translateY(-1px);
-    background: rgba(34, 211, 238, 0.14);
-    border-color: rgba(239, 68, 68, 0.4);
-}
-
-.modal-link--text {
-    cursor: default;
+    word-break: break-word;
 }
 
 .view-project:focus-visible {
