@@ -135,7 +135,7 @@ body {
 .project-meta {
     display: flex;
     gap: 12px;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .project-icon img {
@@ -154,26 +154,64 @@ body {
 .project-heading {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+    padding-top: 2px;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: 2px;
 }
 
 .project-tag {
     display: inline-flex;
     align-items: center;
-    padding: 5px 10px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 6px 11px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.10);
     color: var(--secondary);
     font-size: 12px;
     font-weight: 700;
     line-height: 1;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 4px;
+}
+
+.view-project {
+    appearance: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.95), rgba(22, 163, 74, 0.95));
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    box-shadow: 0 10px 22px rgba(34, 197, 94, 0.22);
+    transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.view-project:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 14px 28px rgba(34, 197, 94, 0.28);
+}
+
+.view-project:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(34, 197, 94, 0.20);
+}
+
+.view-project:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 2px;
 }
 
 /* Modal styles */
@@ -200,11 +238,11 @@ body {
     position: fixed;
     left: 50%;
     top: 50%;
-    width: min(900px, 96%);
-    max-width: 900px;
+    width: min(1100px, 98%);
+    max-width: 1100px;
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 20px;
+    border-radius: 24px;
     overflow: hidden;
     z-index: 2;
     transform: translate(-50%, -50%) scale(0.92);
@@ -232,13 +270,13 @@ body {
 
 .modal-banner img {
     width: 100%;
-    height: 220px;
+    height: 280px;
     object-fit: cover;
     display: block;
 }
 
 .modal-content {
-    padding: 20px;
+    padding: 28px;
 }
 
 .modal-title {
@@ -268,6 +306,10 @@ body {
 
     .modal-panel.expanded {
         width: 96%;
+    }
+
+    .modal-banner img {
+        height: 180px;
     }
 }
 
