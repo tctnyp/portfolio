@@ -208,6 +208,12 @@ body {
     border-color: rgba(245, 158, 11, 0.28);
 }
 
+.status-offline {
+    color: #cbd5e1;
+    background: rgba(148, 163, 184, 0.12);
+    border-color: rgba(148, 163, 184, 0.28);
+}
+
 .status-discontinued {
     color: #fca5a5;
     background: rgba(239, 68, 68, 0.12);

@@ -39,6 +39,10 @@ const modalClose = modal && modal.querySelector('.modal-close');
 function getStatusClass(status) {
     const normalized = (status || '').toLowerCase();
 
+    if (normalized.includes('offline')) {
+        return 'status-offline';
+    }
+
     if (normalized.includes('maint')) {
         return 'status-maintenance';
     }
