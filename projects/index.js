@@ -12,10 +12,10 @@ const projects = [
         id: 'hyper',
         title: 'Hyper Studios',
         subtitle: 'Minecraft Server',
-        tags: ['Minecraft', 'Hosting', 'Community'],
-        banner: '../Files/Images/placeholder.png',
-        icon: '../Files/Images/placeholder.png',
-        desc: 'Minecraft server development: plugins, features, and community tooling for custom gameplay, moderation systems, and performance optimizations.'
+        tags: ['Minecraft', 'Server', 'Infrastructure'],
+        banner: '../Files/Images/hyperbanner.png',
+        icon: '../Files/Images/hyper.png',
+        desc: 'Hyper Network is a modern Minecraft network focused on delivering a polished, high-quality multiplayer experience. Built on powerful infrastructure and designed with long-term progression in mind, our servers combine performance, stability, and custom gameplay to create an experience unlike any other.'
     },
     {
         id: 'hyperxutility',
