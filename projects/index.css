@@ -156,6 +156,8 @@ body {
     flex-direction: column;
     gap: 8px;
     padding-top: 2px;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .project-subtitle {
@@ -316,18 +318,6 @@ body {
 
     .modal-banner img {
         height: 180px;
-    }
-}
-
-@media (min-width: 900px) {
-    .projects-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-@media (min-width: 1200px) {
-    .projects-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 }
 
