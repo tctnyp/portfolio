@@ -3,7 +3,7 @@ const projects = [
         id: 'zenix',
         title: 'Zenix.SG',
         subtitle: 'Server Hosting',
-        tags: ['Hosting', 'Deployment', 'Servers'],
+        tags: ['Hosting', 'Deployment', 'Infrastructure'],
         banner: '../Files/Images/placeholder.png',
         icon: '../Files/Images/placeholder.png',
         desc: 'Server hosting setup, deployment, and maintenance for reliable multiplayer experiences. Includes backups, monitoring, and automated deployments.'
@@ -33,6 +33,7 @@ if (projectsGrid) {
                     <div class="project-icon"><img src="${project.icon}" alt="${project.title} icon"></div>
                     <div class="project-heading">
                         <div class="project-title">${project.title}</div>
+                        <div class="project-subtitle">${project.subtitle}</div>
                         <div class="project-tags">
                             ${project.tags.map((tag) => `<span class="project-tag">${tag}</span>`).join('')}
                         </div>
