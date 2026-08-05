@@ -14,6 +14,7 @@ const formStatus = document.querySelector("#form-status");
 const viewMessageButton = document.querySelector("#view-message-button");
 const sentMessagePanel = document.querySelector("#sent-message-panel");
 const sentMessageContent = document.querySelector("#sent-message-content");
+let lastSentMessage = null;
 
 const phoneInput = contactForm?.querySelector('input[name="phone"]');
 const phonePattern = /^[\+]?[0-9]{0,3}\W?[\(]?[0-9]{3}[\)]?[-\s\. ]?[0-9]{3}[-\s\. ]?[0-9]{4,6}$/im;
@@ -78,6 +79,7 @@ if (contactForm && formStatus) {
         };
         const name = String(formData.get("name") || "").trim();
 
+        lastSentMessage = submittedMessage;
         contactForm.reset();
         formStatus.textContent = name
             ? `Thanks, ${name}. Your message has been saved.`
@@ -85,20 +87,24 @@ if (contactForm && formStatus) {
         formStatus.classList.add("is-visible");
 
         if (sentMessageContent && sentMessagePanel && viewMessageButton) {
-            renderSentMessage(submittedMessage);
-
             sentMessagePanel.hidden = true;
+            viewMessageButton.textContent = "View Sent Message";
             viewMessageButton.hidden = false;
         }
     });
 }
 
 viewMessageButton?.addEventListener("click", () => {
-    if (!sentMessagePanel) {
+    if (!sentMessagePanel || !lastSentMessage) {
         return;
     }
 
     const shouldShow = sentMessagePanel.hidden;
+
+    if (shouldShow) {
+        renderSentMessage(lastSentMessage);
+    }
+
     sentMessagePanel.hidden = !shouldShow;
     viewMessageButton.textContent = shouldShow ? "Hide Sent Message" : "View Sent Message";
 });
