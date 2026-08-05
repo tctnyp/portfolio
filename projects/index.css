@@ -196,6 +196,7 @@ body {
 .project-footer {
     display: flex;
     justify-content: flex-end;
+    margin-top: auto;
     padding-top: 4px;
 }
 
