@@ -5,17 +5,63 @@ function getProjectData(card) {
         title: card.dataset.title || '',
         subtitle: card.dataset.subtitle || '',
         desc: card.dataset.desc || '',
-        banner: card.dataset.banner || ''
+        banner: card.dataset.banner || '',
+        links: parseLinks(card.dataset.links || '')
     };
+}
+
+function parseLinks(rawLinks) {
+    if (!rawLinks) return [];
+
+    try {
+        const parsed = JSON.parse(rawLinks);
+        return Array.isArray(parsed) ? parsed : [];
+    } catch {
+        return [];
+    }
 }
 
 const modal = document.getElementById('project-modal');
 const modalTitle = modal && modal.querySelector('.modal-title');
 const modalSubtitle = modal && modal.querySelector('.modal-subtitle');
 const modalDesc = modal && modal.querySelector('.modal-desc');
+const modalLinks = modal && modal.querySelector('.modal-links');
 const modalBanner = modal && modal.querySelector('.modal-banner img');
 const modalPanel = modal && modal.querySelector('.modal-panel');
 const modalClose = modal && modal.querySelector('.modal-close');
+
+function renderLinks(links) {
+    if (!modalLinks) return;
+
+    modalLinks.replaceChildren();
+
+    if (!Array.isArray(links) || links.length === 0) {
+        modalLinks.hidden = true;
+        return;
+    }
+
+    modalLinks.hidden = false;
+    for (const link of links) {
+        const label = link?.label || link?.text || 'Link';
+        const href = link?.href || '';
+
+        if (!href) {
+            const textChip = document.createElement('span');
+            textChip.className = 'modal-link modal-link--text';
+            textChip.textContent = label;
+            modalLinks.append(textChip);
+            continue;
+        }
+
+        const anchor = document.createElement('a');
+        anchor.className = 'modal-link';
+        anchor.href = href;
+        anchor.target = '_blank';
+        anchor.rel = 'noopener noreferrer';
+        anchor.textContent = label;
+        modalLinks.append(anchor);
+    }
+}
 
 function openModal() {
     if (!modal || !modalPanel) return;
@@ -50,6 +96,7 @@ projectsGrid && projectsGrid.addEventListener('click', (event) => {
     if (modalSubtitle) modalSubtitle.textContent = data.subtitle;
     if (modalDesc) modalDesc.textContent = data.desc;
     if (modalBanner) modalBanner.src = data.banner;
+    renderLinks(data.links);
     openModal();
 });
 

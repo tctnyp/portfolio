@@ -9,7 +9,8 @@
     --surface: rgba(15, 23, 42, 0.72);
     --text: #f8fafc;
     --secondary: #cbd5e1;
-    --accent: #22c55e;
+    --accent: #22d3ee;
+    --accent-alt: #ef4444;
     --border: rgba(255, 255, 255, 0.08);
 }
 
@@ -23,8 +24,8 @@ body {
     min-height: 100vh;
     padding-top: 100px;
     background:
-        radial-gradient(circle at top left, rgba(34, 197, 94, 0.22), transparent 30%),
-        radial-gradient(circle at top right, rgba(56, 189, 248, 0.16), transparent 28%),
+        radial-gradient(circle at top left, rgba(239, 68, 68, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(34, 211, 238, 0.18), transparent 28%),
         linear-gradient(135deg, #020617 0%, #0f172a 50%, #111827 100%);
 }
 
@@ -55,7 +56,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(30, 41, 59, 0.78);
+    background: rgba(17, 24, 39, 0.82);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--border);
@@ -80,7 +81,7 @@ a {
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--accent);
+    color: var(--accent-alt);
 }
 
 .button-primary,
@@ -99,18 +100,18 @@ a {
 
 .button-primary:hover {
     transform: translateY(-3px);
-    background: #16a34a;
+    background: #ef4444;
 }
 
 .button-secondary {
     color: white;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.22);
 }
 
 .button-secondary:hover {
     transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(34, 211, 238, 0.14);
 }
 
 @media (max-width: 900px) {
@@ -164,7 +165,7 @@ a {
     width: 720px;
     height: 720px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(34, 197, 94, 0.22), transparent 70%);
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.22), rgba(34, 211, 238, 0.16) 45%, transparent 72%);
     filter: blur(100px);
     z-index: 0;
 }
@@ -222,7 +223,7 @@ a {
 
 @media (max-width: 900px) {
     .intro-grid {
-        flex-direction: column-reverse;
+        flex-direction: column;
         gap: 20px;
         align-items: center;
         text-align: center;
