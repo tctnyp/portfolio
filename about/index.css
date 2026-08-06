@@ -149,54 +149,160 @@ a {
     }
 }
 
+/* ============================================================
+   About page
+   ============================================================ */
 
 .about-page {
-    width: 100%;
-    padding: 40px clamp(20px, 4vw, 56px) 80px;
+    width: min(1240px, 100%);
+    margin: 0 auto;
+    padding: 40px clamp(20px, 4vw, 56px) 100px;
 }
 
 .about-writing {
     display: grid;
-    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
-    gap: clamp(28px, 4vw, 56px);
+    grid-template-columns: minmax(230px, 268px) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 72px);
     align-items: start;
 }
+
+/* ---------- Left contents bar ---------- */
 
 .chapter-sidebar {
     position: sticky;
     top: 108px;
     align-self: start;
     display: grid;
-    gap: 18px;
-    padding-right: 8px;
+    gap: 16px;
+    padding: 22px 18px;
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.66), rgba(15, 23, 42, 0.72));
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.32);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
-.chapter-sidebar h2 {
-    font-size: 28px;
-    line-height: 1.1;
+.sidebar-label {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 0 10px 12px;
+    border-bottom: 1px solid var(--border);
 }
 
 .chapter-links {
+    position: relative;
     display: grid;
-    gap: 10px;
+    gap: 2px;
+}
+
+/* Vertical rail connecting the chapter numbers */
+.chapter-links::before {
+    content: "";
+    position: absolute;
+    left: 27px;
+    top: 20px;
+    bottom: 20px;
+    width: 2px;
+    border-radius: 2px;
+    background: linear-gradient(180deg,
+            transparent,
+            rgba(255, 255, 255, 0.14) 10%,
+            rgba(255, 255, 255, 0.14) 90%,
+            transparent);
 }
 
 .chapter-links a {
-    color: var(--secondary);
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    padding: 9px 12px 9px 14px;
+    border-radius: 14px;
     text-decoration: none;
-    font-size: 16px;
-    line-height: 1.5;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: background 0.22s ease, transform 0.22s ease;
 }
 
 .chapter-links a:hover {
-    color: var(--text);
-    transform: translateX(4px);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(3px);
 }
+
+.chapter-num {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #101a2e;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: rgba(203, 213, 225, 0.75);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.chapter-text {
+    display: grid;
+    gap: 1px;
+    min-width: 0;
+}
+
+.chapter-year {
+    color: rgba(203, 213, 225, 0.55);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.chapter-name {
+    color: var(--secondary);
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    transition: color 0.22s ease;
+}
+
+/* Active chapter */
+.chapter-links a.is-active {
+    background: linear-gradient(90deg, rgba(34, 211, 238, 0.12), transparent);
+}
+
+.chapter-links a.is-active .chapter-num {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #05202a;
+    box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.14);
+}
+
+.chapter-links a.is-active .chapter-name {
+    color: var(--text);
+}
+
+.chapter-links a.is-active .chapter-year {
+    color: var(--accent);
+}
+
+/* ---------- Story column ---------- */
 
 .about-story {
     display: grid;
-    gap: 28px;
+    gap: 44px;
+    max-width: 74ch;
+}
+
+.story-header {
+    display: grid;
+    gap: 14px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border);
 }
 
 .page-eyebrow {
@@ -205,92 +311,100 @@ a {
     font-weight: 700;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    margin-bottom: 14px;
+    margin-bottom: 0;
 }
 
 .page-title {
-    font-size: clamp(40px, 6vw, 72px);
+    font-size: clamp(38px, 6vw, 66px);
     line-height: 1.05;
-    margin-bottom: 18px;
+    letter-spacing: -0.025em;
+    margin-bottom: 0;
 }
 
-.page-copy {
+.story-subtitle {
     color: var(--secondary);
-    font-size: 18px;
-    line-height: 1.75;
-}
-
-.story-list {
-    display: grid;
-    gap: 14px;
-    padding-left: 18px;
-    color: var(--secondary);
+    font-size: clamp(16px, 2vw, 19px);
     line-height: 1.7;
+    max-width: 60ch;
 }
+
+/* ---------- Sections: headers + paragraphs only ---------- */
 
 .writing-section {
-    padding-top: 4px;
+    display: grid;
+    gap: 18px;
+    scroll-margin-top: 120px;
 }
 
 .writing-section h2 {
-    font-size: clamp(24px, 3vw, 36px);
-    line-height: 1.15;
-    margin-bottom: 12px;
+    font-size: clamp(23px, 3vw, 32px);
+    line-height: 1.2;
+    letter-spacing: -0.015em;
 }
 
 .writing-section p {
-    max-width: 900px;
     color: var(--secondary);
-    line-height: 1.85;
-    font-size: 18px;
-}
-}
-
-.writing-timeline article {
-    padding: 0;
+    font-size: 17.5px;
+    line-height: 1.9;
 }
 
-.timeline-year {
-    color: var(--accent-alt);
-}
+/* ---------- Responsive ---------- */
 
-.writing-notes p {
-    color: var(--secondary);
-    line-height: 1.7;
-}
-
-.about-writing {
-    .about-page {
-        padding: 28px 20px 64px;
-
-        .chapter-sidebar {
-            position: static;
-            padding-right: 0;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
+@media (max-width: 980px) {
+    .about-writing {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
     }
 
-    .writing-timeline,
-    .writing-notes {
-        grid-template-columns: 1fr;
+    .chapter-sidebar {
+        position: static;
+        padding: 16px;
+    }
+
+    .sidebar-label {
+        padding: 0 2px 10px;
+    }
+
+    .chapter-links {
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: thin;
+    }
+
+    .chapter-links::before {
+        display: none;
+    }
+
+    .chapter-links a {
+        gap: 10px;
+        padding: 8px 14px 8px 8px;
+        border: 1px solid var(--border);
+        white-space: nowrap;
+    }
+
+    .chapter-links a:hover {
+        transform: none;
+    }
+
+    .chapter-links a.is-active {
+        border-color: rgba(34, 211, 238, 0.4);
     }
 }
 
 @media (max-width: 640px) {
-
-    .page-copy,
-    .writing-section p,
-
-    .chapter-sidebar h2 {
-        font-size: 22px;
+    .about-page {
+        padding: 28px 18px 72px;
     }
 
-    .story-list {
-        font-size: 16px;
+    .about-story {
+        gap: 34px;
     }
 
-    .writing-section-emphasis {
-        padding-left: 14px;
+    .writing-section p {
+        font-size: 16.5px;
+        line-height: 1.85;
     }
 }

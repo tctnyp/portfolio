@@ -21,110 +21,206 @@
     <main class="about-page">
         <section class="about-writing">
             <aside class="chapter-sidebar" aria-label="Chapter navigation">
-                <p class="page-eyebrow">Chapters</p>
-                <h2>Writing map</h2>
+                <p class="sidebar-label">Contents</p>
+
                 <nav class="chapter-links">
-                    <a href="#intro">Introduction</a>
-                    <a href="#chapter-one">[2022] Secondary 1</a>
-                    <a href="#chapter-two">[2023] Secondary 2</a>
-                    <a href="#chapter-three">[2024] Secondary 3</a>
-                    <a href="#chapter-four">[2025] Secondary 4</a>
-                    <a href="#chapter-five">Where I'm heading</a>
+                    <a href="#intro">
+                        <span class="chapter-num">01</span>
+                        <span class="chapter-text">
+                            <span class="chapter-year">Introduction</span>
+                            <span class="chapter-name">Start here</span>
+                        </span>
+                    </a>
+                    <a href="#chapter-one">
+                        <span class="chapter-num">02</span>
+                        <span class="chapter-text">
+                            <span class="chapter-year">2022</span>
+                            <span class="chapter-name">The Chromebook</span>
+                        </span>
+                    </a>
+                    <a href="#chapter-two">
+                        <span class="chapter-num">03</span>
+                        <span class="chapter-text">
+                            <span class="chapter-year">2023</span>
+                            <span class="chapter-name">The unenrollment</span>
+                        </span>
+                    </a>
+                    <a href="#chapter-three">
+                        <span class="chapter-num">04</span>
+                        <span class="chapter-text">
+                            <span class="chapter-year">2024</span>
+                            <span class="chapter-name">My first server</span>
+                        </span>
+                    </a>
+                    <a href="#chapter-four">
+                        <span class="chapter-num">05</span>
+                        <span class="chapter-text">
+                            <span class="chapter-year">2025</span>
+                            <span class="chapter-name">Building for others</span>
+                        </span>
+                    </a>
+                    <a href="#chapter-five">
+                        <span class="chapter-num">06</span>
+                        <span class="chapter-text">
+                            <span class="chapter-year">Now</span>
+                            <span class="chapter-name">Where I&apos;m heading</span>
+                        </span>
+                    </a>
                 </nav>
             </aside>
 
             <article class="about-story">
                 <header class="story-header">
                     <p class="page-eyebrow">About Me</p>
-                    <h1 class="page-title">How bypassing a school Chromebook turned into running servers.</h1>
-                    <p class="story-lede">
-                        This isn&apos;t a CV. It&apos;s the long version &mdash; the detours, the bad ideas, and the
-                        moments where a small annoyance turned into something I genuinely care about.
+                    <h1 class="page-title">Tan Chee Tiong</h1>
+                    <p class="story-subtitle">
+                        Aspiring developer &mdash; server hosting, programming, and Minecraft development.
+                        Below is the long version of how I got here.
                     </p>
-                    <ul class="story-meta">
-                        <li>Tan Chee Tiong</li>
-                        <li>Singapore</li>
-                        <li>Hosting &middot; Programming &middot; Minecraft</li>
-                    </ul>
                 </header>
+
                 <section class="writing-section" id="intro">
-                    <p class="lead-paragraph">
-                        Hey, everyone. I&apos;m Tan Chee Tiong &mdash; an aspiring developer with a stubborn interest in
-                        server hosting, programming, and building Minecraft servers that people actually want to play
-                        on. If you only read one line of this page, make it this one: almost everything I know started
-                        because something in front of me was broken, slow, or locked down, and I refused to leave it
-                        alone.
+                    <h2>Start here</h2>
+                    <p>
+                        Hey, everyone. I&apos;m Tan Chee Tiong, and I build and run things that other people rely on:
+                        servers, bots, and the infrastructure that keeps them online. If you only read one line of this
+                        page, make it this one &mdash; almost everything I know started because something in front of me
+                        was broken, slow, or locked down, and I refused to leave it alone.
                     </p>
                     <p>
-                        I&apos;ve written this page as a set of chapters rather than a bullet list, because the bullet
-                        list version wouldn&apos;t make much sense. &ldquo;Runs Minecraft networks&rdquo; sounds random
-                        until you know it started with a school laptop I wasn&apos;t supposed to modify. The path from
-                        there to here was messy, and the messy part is the interesting part.
-                    </p>
-                    <p>
-                        So: four years, one Chromebook, several servers, and a lot of things I broke before I understood
-                        them.
+                        I&apos;ve written this as a story rather than a list of skills, because the list on its own
+                        wouldn&apos;t make much sense. &ldquo;Runs Minecraft networks&rdquo; sounds random until you know
+                        it began with a school laptop I wasn&apos;t supposed to modify. The path from there to here was
+                        messy, and the messy part is the part worth reading.
                     </p>
                 </section>
 
-                <section class="writing-section writing-section-emphasis" id="chapter-one">
                 <section class="writing-section" id="chapter-one">
-                    <p class="story-label">2022 &mdash; Secondary 1</p>
-                    <h2>The Chromebook that started everything</h2>
+                    <h2>2022 &mdash; The Chromebook that started everything</h2>
                     <p>
-                        In Secondary 1, the school gave us Chromebooks to use for our studies. On paper it was a good
-                        idea. In practice, mine was slow, heavily managed, and restricted in ways that felt completely
-                        arbitrary. Sometimes it would block the most random sites for no reason at all &mdash; documentation
-                        pages, reference material, things I actually needed. That got annoying very quickly, and I
-                        started looking for a way around it.
+                        In Secondary 1 the school gave us Chromebooks to use for our studies. On paper it was a good
+                        idea. In practice mine was slow, heavily managed, and restricted in ways that felt completely
+                        arbitrary. It would block the most random sites for no reason at all &mdash; documentation pages,
+                        reference material, things I actually needed for schoolwork. That got annoying very quickly, so
+                        I started looking for a way around it.
                     </p>
                     <p>
                         The internet, predictably, had opinions. The first method I tried was repeatedly disabling the
-                        management extension using scripts. Another was corrupting the extension&apos;s installation so
-                        it couldn&apos;t load at all. Both worked &mdash; for a while. Both were temporary. The extension
-                        would eventually repair itself, sync back down from the management server, and everything
-                        I&apos;d done would quietly undo itself overnight.
+                        management extension with scripts. The second was corrupting the extension&apos;s installation
+                        so it couldn&apos;t load at all. Both worked for a while, and both were temporary. The extension
+                        would eventually repair itself, sync back down from the management server, and quietly undo
+                        everything overnight.
                     </p>
                     <p>
-                        What I didn&apos;t realise at the time was that the failures were the useful part. To make any
-                        of it work I had to understand what an extension actually <strong>is</strong>, how enterprise
-                        enrollment pushes policy to a device, why a managed machine phones home, and what a
-                        &ldquo;managed&rdquo; device really means when someone else holds the keys. I wasn&apos;t
-                        studying any of that. I was just trying to open a website. I learned it anyway.
+                        What I didn&apos;t realise at the time is that the failures were the useful part. To get any of
+                        it working I had to understand what a browser extension actually is, how enterprise enrollment
+                        pushes policy down to a device, why a managed machine phones home, and what &ldquo;managed&rdquo;
+                        really means when somebody else holds the keys. I wasn&apos;t studying any of that. I was just
+                        trying to open a website. I learned it anyway.
                     </p>
                     <p>
-                        Somewhere in that rabbit hole I found a way to permanently unenroll the Chromebook. I sat on it
-                        for months. I knew it would work, and I knew what would happen if it went wrong, so I did
-                        nothing &mdash; for a whole year.
+                        Somewhere in that rabbit hole I found a way to permanently unenroll the device. I sat on it for
+                        months. I knew it would work, and I knew exactly what would happen if it went wrong, so I did
+                        nothing about it for a whole year.
                     </p>
                 </section>
 
                 <section class="writing-section" id="chapter-two">
-                    <p class="story-label">[2023] Secondary 2</p>
-                    <h2>The Unenrollment</h2>
+                    <h2>2023 &mdash; The unenrollment</h2>
                     <p>
-                        Server hosting pushed me to think about reliability, uptime, maintenance, and the quiet details
-                        people only notice when something fails. It taught me to design for stability, not just for the
-                        first successful launch.
+                        Eventually I stopped hesitating and went through with it. Unenrolling meant getting into
+                        developer mode, wiping the machine, and rebuilding it from scratch &mdash; which also meant that if
+                        I made a mistake I&apos;d be handing in a very expensive brick and explaining why. It worked.
+                        The bigger surprise was how much I&apos;d picked up just getting to that point.
                     </p>
                     <p>
-                        That mindset changed how I look at every project. I now care a lot about whether something stays
-                        understandable after I come back to it later, not just whether it works once.
+                        It was the first time a computer felt like mine rather than something I was borrowing. Once I
+                        could install whatever I wanted, I stopped consuming and started building. I poked at Linux, I
+                        broke the install, I reinstalled it, and then I broke it again in a more interesting way. I got
+                        comfortable in the terminal purely because there was no button for the thing I wanted to do.
+                    </p>
+                    <p>
+                        This is also the year I stopped being afraid of the sentence &ldquo;I don&apos;t know how that
+                        works.&rdquo; Before, that ended the conversation. After, it became a starting point. Not
+                        knowing something stopped feeling like a wall and started feeling like a to-do item.
                     </p>
                 </section>
 
                 <section class="writing-section" id="chapter-three">
-                    <p class="story-label">Chapter Three</p>
-                    <h2>Building with purpose.</h2>
+                    <h2>2024 &mdash; Renting my first real server</h2>
                     <p>
-                        I focus on code and infrastructure that are understandable, maintainable, and useful for real
-                        people. That includes keeping workflows clear, reducing unnecessary complexity, and making sure
-                        the final result feels calm to use.
+                        In Secondary 3 I went from breaking my own machine to renting someone else&apos;s. I wanted to
+                        run a Minecraft server for friends and assumed it would take an evening. It did not. It turned
+                        into a crash course in everything I now do daily: SSH, Linux administration, hosting panels,
+                        port forwarding, firewalls, Java memory flags, plugin conflicts, and the very specific misery of
+                        a server that runs perfectly right up until eight people join it.
                     </p>
                     <p>
-                        I&apos;m especially interested in the overlap between programming, hosting, and Minecraft
-                        development, because that combination lets me build systems that are both technical and
-                        practical.
+                        Hosting is where my mindset genuinely changed. Writing code that works once is easy. Keeping
+                        something online while real people are using it is a completely different discipline. Suddenly I
+                        cared about uptime, backups, restart schedules, tick lag, and what happens at 2am when nobody is
+                        awake to fix it. The important question stopped being &ldquo;does it work?&rdquo; and became
+                        &ldquo;what happens when it doesn&apos;t?&rdquo;
+                    </p>
+                    <p>
+                        I also learned that players are the most thorough QA team you will ever have. They will find the
+                        one duplication bug, the one command missing a permission check, and the one corner of the map
+                        that crashes the server &mdash; usually within the hour, and always while I was supposed to be doing
+                        homework.
+                    </p>
+                </section>
+
+                <section class="writing-section" id="chapter-four">
+                    <h2>2025 &mdash; Building for other people</h2>
+                    <p>
+                        Secondary 4 was the year my projects stopped being just for me. I became co-owner of Hyper
+                        Studios, a Minecraft network running on both Java Edition and Eaglercraft with game modes like
+                        BedWars, SkyBlock, Survival and Duels. Being responsible for a community instead of a hobby
+                        server changes the job entirely &mdash; you&apos;re dealing with staff, moderation, player
+                        expectations, and infrastructure decisions that are painful to reverse later.
+                    </p>
+                    <p>
+                        Around the same time I got frustrated with Discord bots. Every server ends up inviting five of
+                        them: one for music, one for moderation, one for tickets, one for invite tracking. Half the
+                        useful features sit behind a paywall, and none of them talk to each other. It felt backwards, so
+                        I built HyperXUtility &mdash; a single bot covering what those five were doing, because I was
+                        convinced one good bot should be enough.
+                    </p>
+                    <p>
+                        I also spent time with Zenix.SG on the support side, which taught me the part of this field
+                        nobody posts about: talking to users. Diagnosing a problem from a vague message, explaining a
+                        fix without being condescending, and admitting when something is genuinely our fault. Support
+                        work made me a noticeably better developer, mostly because it forces you to see your own systems
+                        through somebody else&apos;s eyes.
+                    </p>
+                    <p>
+                        All of this happened alongside O-Levels, which was exactly as balanced as it sounds. If nothing
+                        else, that year taught me how to prioritise ruthlessly and how to tell my own ideas &ldquo;not
+                        this week.&rdquo;
+                    </p>
+                </section>
+
+                <section class="writing-section" id="chapter-five">
+                    <h2>Now &mdash; Where I&apos;m heading</h2>
+                    <p>
+                        I&apos;m studying at Nanyang Polytechnic now, and the question has shifted from &ldquo;can I make
+                        this work?&rdquo; to &ldquo;is this actually good?&rdquo; Design, usability, and the experience
+                        of the person on the other side of the screen used to feel like optional polish to me. They
+                        don&apos;t anymore. A fast server behind a confusing interface is still a bad product.
+                    </p>
+                    <p>
+                        These days I care about reliability over cleverness, because boring predictable systems beat
+                        impressive ones that fall over. I care about writing code I can still read in six months, since
+                        if future me can&apos;t follow it then it isn&apos;t finished. I try to keep the number of moving
+                        parts low, because every dependency is something I&apos;ll eventually have to debug at a bad
+                        time. And above all I try to actually ship, because a rough thing that exists beats a perfect
+                        thing that doesn&apos;t.
+                    </p>
+                    <p>
+                        Longer term I want to keep working where programming, hosting and community overlap &mdash; building
+                        infrastructure that&apos;s technical underneath and calm to use on top. Fewer half-finished
+                        experiments, more things people actually depend on. That&apos;s the story so far, and if any of it
+                        sounds like your kind of thing, the contact page is one click away.
                     </p>
                 </section>
             </article>
@@ -132,6 +228,7 @@
     </main>
 
     <script type="module" src="../script.js"></script>
+    <script type="module" src="./index.js"></script>
 </body>
 
 </html>
