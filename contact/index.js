@@ -11,10 +11,6 @@ highlightCurrentPage();
 
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
-const viewMessageButton = document.querySelector("#view-message-button");
-const sentMessagePanel = document.querySelector("#sent-message-panel");
-const sentMessageContent = document.querySelector("#sent-message-content");
-let lastSentMessage = null;
 
 const phoneInput = contactForm?.querySelector('input[name="phone"]');
 const phonePattern = /^[\+]?[0-9]{0,3}\W?[\(]?[0-9]{3}[\)]?[-\s\. ]?[0-9]{3}[-\s\. ]?[0-9]{4,6}$/im;
@@ -34,30 +30,6 @@ if (contactForm && formStatus) {
         phoneInput.setCustomValidity("");
     });
 
-    function renderSentMessage(submittedMessage) {
-        if (!sentMessageContent) {
-            return;
-        }
-
-        sentMessageContent.replaceChildren();
-
-        const fields = [
-            ["Name", submittedMessage.name],
-            ["Email", submittedMessage.email],
-            ["Phone", submittedMessage.phone],
-            ["Subject", submittedMessage.subject],
-            ["Message", submittedMessage.message],
-        ];
-
-        fields.forEach(([label, value]) => {
-            const paragraph = document.createElement("p");
-            const strong = document.createElement("strong");
-            strong.textContent = `${label}: `;
-            paragraph.append(strong, value || "-");
-            sentMessageContent.append(paragraph);
-        });
-    }
-
     contactForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
@@ -70,35 +42,12 @@ if (contactForm && formStatus) {
         }
 
         const formData = new FormData(contactForm);
-        const submittedMessage = {
-            name: String(formData.get("name") || "").trim(),
-            email: String(formData.get("email") || "").trim(),
-            phone: String(formData.get("phone") || "").trim(),
-            subject: String(formData.get("subject") || "").trim(),
-            message: String(formData.get("message") || "").trim(),
-        };
         const name = String(formData.get("name") || "").trim();
 
-        lastSentMessage = submittedMessage;
         contactForm.reset();
         formStatus.textContent = name
-            ? `Thanks, ${name}. Click View Message to see what you sent.`
-            : "Thanks. Click View Message to see what you sent.";
+            ? `Thanks, ${name}. Your message has been sent.`
+            : "Thanks. Your message has been sent.";
         formStatus.classList.add("is-visible");
-
-        if (viewMessageButton && sentMessagePanel) {
-            sentMessagePanel.hidden = true;
-            viewMessageButton.hidden = false;
-            viewMessageButton.textContent = "View Message";
-        }
     });
 }
-
-viewMessageButton?.addEventListener("click", () => {
-    if (!sentMessagePanel || !sentMessageContent || !lastSentMessage) {
-        return;
-    }
-
-    renderSentMessage(lastSentMessage);
-    sentMessagePanel.hidden = false;
-});
