@@ -82,14 +82,14 @@ if (contactForm && formStatus) {
         lastSentMessage = submittedMessage;
         contactForm.reset();
         formStatus.textContent = name
-            ? `Thanks, ${name}. Click View Recent Message to see what you sent.`
-            : "Thanks. Click View Recent Message to see what you sent.";
+            ? `Thanks, ${name}. Click View Message to see what you sent.`
+            : "Thanks. Click View Message to see what you sent.";
         formStatus.classList.add("is-visible");
 
         if (viewMessageButton && sentMessagePanel) {
             sentMessagePanel.hidden = true;
             viewMessageButton.hidden = false;
-            viewMessageButton.textContent = "View Recent Message";
+            viewMessageButton.textContent = "View Message";
         }
     });
 }
@@ -99,12 +99,6 @@ viewMessageButton?.addEventListener("click", () => {
         return;
     }
 
-    const shouldShow = sentMessagePanel.hidden;
-
-    if (shouldShow) {
-        renderSentMessage(lastSentMessage);
-    }
-
-    sentMessagePanel.hidden = !shouldShow;
-    viewMessageButton.textContent = shouldShow ? "Hide Recent Message" : "View Recent Message";
+    renderSentMessage(lastSentMessage);
+    sentMessagePanel.hidden = false;
 });
