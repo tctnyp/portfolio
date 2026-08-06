@@ -11,6 +11,7 @@ highlightCurrentPage();
 
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
+const viewMessageButton = document.querySelector("#view-message-button");
 const sentMessagePanel = document.querySelector("#sent-message-panel");
 const sentMessageContent = document.querySelector("#sent-message-content");
 let lastSentMessage = null;
@@ -81,13 +82,29 @@ if (contactForm && formStatus) {
         lastSentMessage = submittedMessage;
         contactForm.reset();
         formStatus.textContent = name
-            ? `Thanks, ${name}. Your recent message is now shown below.`
-            : "Thanks. Your recent message is now shown below.";
+            ? `Thanks, ${name}. Click View Recent Message to see what you sent.`
+            : "Thanks. Click View Recent Message to see what you sent.";
         formStatus.classList.add("is-visible");
 
-        if (sentMessageContent && sentMessagePanel) {
-            renderSentMessage(submittedMessage);
-            sentMessagePanel.hidden = false;
+        if (viewMessageButton && sentMessagePanel) {
+            sentMessagePanel.hidden = true;
+            viewMessageButton.hidden = false;
+            viewMessageButton.textContent = "View Recent Message";
         }
     });
 }
+
+viewMessageButton?.addEventListener("click", () => {
+    if (!sentMessagePanel || !sentMessageContent || !lastSentMessage) {
+        return;
+    }
+
+    const shouldShow = sentMessagePanel.hidden;
+
+    if (shouldShow) {
+        renderSentMessage(lastSentMessage);
+    }
+
+    sentMessagePanel.hidden = !shouldShow;
+    viewMessageButton.textContent = shouldShow ? "Hide Recent Message" : "View Recent Message";
+});
