@@ -157,6 +157,45 @@ a {
 
 .about-writing {
     display: grid;
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 56px);
+    align-items: start;
+}
+
+.chapter-sidebar {
+    position: sticky;
+    top: 108px;
+    align-self: start;
+    display: grid;
+    gap: 18px;
+    padding-right: 8px;
+}
+
+.chapter-sidebar h2 {
+    font-size: 28px;
+    line-height: 1.1;
+}
+
+.chapter-links {
+    display: grid;
+    gap: 10px;
+}
+
+.chapter-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.chapter-links a:hover {
+    color: var(--text);
+    transform: translateX(4px);
+}
+
+.about-story {
+    display: grid;
     gap: 28px;
 }
 
@@ -205,16 +244,6 @@ a {
     line-height: 1.85;
     font-size: 18px;
 }
-
-.writing-section-emphasis {
-    padding-left: 18px;
-    border-left: 2px solid rgba(34, 211, 238, 0.35);
-}
-
-.writing-timeline {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
 }
 
 .writing-timeline article {
@@ -223,22 +252,6 @@ a {
 
 .timeline-year {
     color: var(--accent-alt);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.writing-notes {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-}
-
-.writing-notes h2 {
-    font-size: 22px;
-    margin-bottom: 10px;
 }
 
 .writing-notes p {
@@ -246,9 +259,16 @@ a {
     line-height: 1.7;
 }
 
-@media (max-width: 900px) {
+.about-writing {
     .about-page {
         padding: 28px 20px 64px;
+
+        .chapter-sidebar {
+            position: static;
+            padding-right: 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
     }
 
     .writing-timeline,
@@ -261,6 +281,11 @@ a {
 
     .page-copy,
     .writing-section p,
+
+    .chapter-sidebar h2 {
+        font-size: 22px;
+    }
+
     .story-list {
         font-size: 16px;
     }
