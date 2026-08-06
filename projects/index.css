@@ -65,7 +65,7 @@ body {
 }
 
 .page-shell {
-    width: min(1120px, calc(100% - 48px));
+    width: min(1560px, calc(100% - 48px));
     margin: 0 auto;
     padding: 40px 0 80px;
 }
@@ -104,40 +104,81 @@ body {
     padding: 22px;
 }
 
-/* Project card layout (desktop and base) */
+/* Project card layout (mobile-first; columns scale up in the queries below) */
 .page-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+}
+
+/* ============================================================
+   Dynamic project columns: 1 → 2 → 3 → 4
+   ============================================================ */
+
+@media (min-width: 700px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1080px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+}
+
+@media (min-width: 1460px) {
+    .projects-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 26px;
+    }
 }
 
 .projects-grid {
-    margin-top: 24px;
+    margin-top: 28px;
 }
 
 .project-card {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    padding: 0;
+    min-width: 0;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(34, 211, 238, 0.32);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
 }
 
 .project-banner img {
     width: 100%;
-    height: 120px;
+    aspect-ratio: 16 / 9;
+    height: auto;
     object-fit: cover;
     display: block;
 }
 
 .project-tags--below {
-    padding: 12px 14px 0;
+    padding: 16px 18px 0;
 }
 
 .project-body {
-    padding: 12px 14px;
+    padding: 14px 18px 18px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     flex: 1 1 auto;
+    min-width: 0;
+}
+
+.project-desc {
+    color: var(--secondary);
+    font-size: 14px;
+    line-height: 1.65;
 }
 
 .project-meta {
@@ -448,16 +489,7 @@ body {
     line-height: 1.4;
 }
 
-/* Responsive overrides */
 @media (max-width: 699px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .project-banner img {
-        height: 160px;
-    }
-
     .modal-panel.expanded {
         width: 96%;
     }
@@ -489,15 +521,6 @@ body {
 
     .nav-links a {
         font-size: 14px;
-    }
-
-    .page-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .project-banner img {
-        height: 160px;
     }
 
     .modal-panel.expanded {

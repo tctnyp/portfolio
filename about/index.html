@@ -25,44 +25,83 @@
                 <h2>Writing map</h2>
                 <nav class="chapter-links">
                     <a href="#intro">Introduction</a>
-                    <a href="#chapter-one">Chapter One</a>
-                    <a href="#chapter-two">Chapter Two</a>
-                    <a href="#chapter-three">Chapter Three</a>
+                    <a href="#chapter-one">[2022] Secondary 1</a>
+                    <a href="#chapter-two">[2023] Secondary 2</a>
+                    <a href="#chapter-three">[2024] Secondary 3</a>
+                    <a href="#chapter-four">[2025] Secondary 4</a>
+                    <a href="#chapter-five">Where I'm heading</a>
                 </nav>
             </aside>
 
             <article class="about-story">
-                <p class="page-eyebrow">About Me</p>
-                <h1 class="page-title">My story so far, written like a living blog.</h1>
-                <section class="writing-section" id="intro">
-                    <p class="page-copy">
-                        I&apos;m Tan Chee Tiong. This page is where I keep the story of how I got into programming,
-                        server hosting, and Minecraft development, and where I document the kind of builder I am
-                        becoming. I like systems that feel calm, useful, and easy to trust.
+                <header class="story-header">
+                    <p class="page-eyebrow">About Me</p>
+                    <h1 class="page-title">How bypassing a school Chromebook turned into running servers.</h1>
+                    <p class="story-lede">
+                        This isn&apos;t a CV. It&apos;s the long version &mdash; the detours, the bad ideas, and the
+                        moments where a small annoyance turned into something I genuinely care about.
                     </p>
-                    <p class="page-copy">
-                        I want this space to read like a real set of paragraphs, not a wall of boxes. That makes it
-                        easier for me to keep writing, revising, and adding new chapters as my story changes.
+                    <ul class="story-meta">
+                        <li>Tan Chee Tiong</li>
+                        <li>Singapore</li>
+                        <li>Hosting &middot; Programming &middot; Minecraft</li>
+                    </ul>
+                </header>
+                <section class="writing-section" id="intro">
+                    <p class="lead-paragraph">
+                        Hey, everyone. I&apos;m Tan Chee Tiong &mdash; an aspiring developer with a stubborn interest in
+                        server hosting, programming, and building Minecraft servers that people actually want to play
+                        on. If you only read one line of this page, make it this one: almost everything I know started
+                        because something in front of me was broken, slow, or locked down, and I refused to leave it
+                        alone.
+                    </p>
+                    <p>
+                        I&apos;ve written this page as a set of chapters rather than a bullet list, because the bullet
+                        list version wouldn&apos;t make much sense. &ldquo;Runs Minecraft networks&rdquo; sounds random
+                        until you know it started with a school laptop I wasn&apos;t supposed to modify. The path from
+                        there to here was messy, and the messy part is the interesting part.
+                    </p>
+                    <p>
+                        So: four years, one Chromebook, several servers, and a lot of things I broke before I understood
+                        them.
                     </p>
                 </section>
 
                 <section class="writing-section writing-section-emphasis" id="chapter-one">
-                    <p class="story-label">Chapter One</p>
-                    <h2>Curiosity came first.</h2>
+                <section class="writing-section" id="chapter-one">
+                    <p class="story-label">2022 &mdash; Secondary 1</p>
+                    <h2>The Chromebook that started everything</h2>
                     <p>
-                        I started by wanting to understand how things worked behind the screen. That curiosity grew into
-                        a habit of experimenting, breaking things, fixing them, and learning the shape of the system
-                        underneath. Over time, that habit turned into a genuine love for building.
+                        In Secondary 1, the school gave us Chromebooks to use for our studies. On paper it was a good
+                        idea. In practice, mine was slow, heavily managed, and restricted in ways that felt completely
+                        arbitrary. Sometimes it would block the most random sites for no reason at all &mdash; documentation
+                        pages, reference material, things I actually needed. That got annoying very quickly, and I
+                        started looking for a way around it.
                     </p>
                     <p>
-                        The more I learned, the more I wanted to keep going. Each small discovery made the next one feel
-                        more reachable, and that is still how I like to learn now.
+                        The internet, predictably, had opinions. The first method I tried was repeatedly disabling the
+                        management extension using scripts. Another was corrupting the extension&apos;s installation so
+                        it couldn&apos;t load at all. Both worked &mdash; for a while. Both were temporary. The extension
+                        would eventually repair itself, sync back down from the management server, and everything
+                        I&apos;d done would quietly undo itself overnight.
+                    </p>
+                    <p>
+                        What I didn&apos;t realise at the time was that the failures were the useful part. To make any
+                        of it work I had to understand what an extension actually <strong>is</strong>, how enterprise
+                        enrollment pushes policy to a device, why a managed machine phones home, and what a
+                        &ldquo;managed&rdquo; device really means when someone else holds the keys. I wasn&apos;t
+                        studying any of that. I was just trying to open a website. I learned it anyway.
+                    </p>
+                    <p>
+                        Somewhere in that rabbit hole I found a way to permanently unenroll the Chromebook. I sat on it
+                        for months. I knew it would work, and I knew what would happen if it went wrong, so I did
+                        nothing &mdash; for a whole year.
                     </p>
                 </section>
 
                 <section class="writing-section" id="chapter-two">
-                    <p class="story-label">Chapter Two</p>
-                    <h2>The server side taught me discipline.</h2>
+                    <p class="story-label">[2023] Secondary 2</p>
+                    <h2>The Unenrollment</h2>
                     <p>
                         Server hosting pushed me to think about reliability, uptime, maintenance, and the quiet details
                         people only notice when something fails. It taught me to design for stability, not just for the
