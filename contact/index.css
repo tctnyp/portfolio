@@ -45,6 +45,10 @@ a {
     color: inherit;
 }
 
+/* ============================================================
+   Navigation
+   ============================================================ */
+
 .navbar {
     position: fixed;
     top: 20px;
@@ -84,13 +88,20 @@ a {
     color: var(--accent-alt);
 }
 
+/* ============================================================
+   Buttons
+   ============================================================ */
+
 .button-primary,
 .button-secondary {
     padding: 15px 34px;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 700;
-    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .button-primary {
@@ -113,6 +124,15 @@ a {
     transform: translateY(-3px);
     background: rgba(34, 211, 238, 0.14);
 }
+
+.button-primary {
+    border: 0;
+    cursor: pointer;
+}
+
+/* ============================================================
+   Navigation Responsive
+   ============================================================ */
 
 @media (max-width: 900px) {
     body {
@@ -148,6 +168,10 @@ a {
         text-align: center;
     }
 }
+
+/* ============================================================
+   General Page Layout
+   ============================================================ */
 
 .page-shell {
     width: min(1120px, calc(100% - 48px));
@@ -226,6 +250,10 @@ a {
     }
 }
 
+/* ============================================================
+   Contact Page
+   ============================================================ */
+
 .contact-layout {
     display: grid;
     gap: 24px;
@@ -282,7 +310,10 @@ a {
     padding: 14px 16px;
     font: inherit;
     outline: none;
-    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
 .field input::placeholder,
@@ -319,13 +350,19 @@ a {
     line-height: 1.5;
     opacity: 0;
     transform: translateY(4px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
 }
 
 .form-status.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ============================================================
+   Social / Alternative Contact
+   ============================================================ */
 
 .social-panel {
     display: grid;
@@ -363,7 +400,9 @@ a {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 18px;
     padding: 16px;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
 }
 
 .contact-link:hover {
@@ -389,6 +428,7 @@ a {
     word-break: break-word;
 }
 
+/* Icon container */
 .contact-icon {
     width: 48px;
     height: 48px;
@@ -397,21 +437,26 @@ a {
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.18), rgba(34, 211, 238, 0.16));
+
+    background: linear-gradient(135deg,
+            rgba(239, 68, 68, 0.18),
+            rgba(34, 211, 238, 0.16));
+
     border: 1px solid rgba(34, 211, 238, 0.18);
     color: var(--text);
 }
 
-.contact-icon {
+/* PNG / image icon */
+.contact-icon img {
     width: 22px;
     height: 22px;
-    fill: currentColor;
+    object-fit: contain;
+    display: block;
 }
 
-.button-primary {
-    border: 0;
-    cursor: pointer;
-}
+/* ============================================================
+   Contact Responsive
+   ============================================================ */
 
 @media (max-width: 900px) {
     .contact-grid {
@@ -484,7 +529,10 @@ a {
     padding: 8px 10px 8px 14px;
     border-radius: 10px;
     border-left: 2px solid transparent;
-    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .chapter-links a:hover {
@@ -519,22 +567,6 @@ a {
     gap: 16px;
     padding-bottom: 32px;
     border-bottom: 1px solid var(--border);
-}
-
-.page-eyebrow {
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 0;
-}
-
-.page-title {
-    font-size: clamp(32px, 5vw, 58px);
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    margin-bottom: 0;
 }
 
 .story-lede {
@@ -597,6 +629,7 @@ a {
 }
 
 /* Drop cap on the opening paragraph */
+
 .lead-paragraph::first-letter {
     float: left;
     color: var(--text);
@@ -613,7 +646,9 @@ a {
     padding: 22px 28px;
     border-left: 3px solid var(--accent);
     border-radius: 0 18px 18px 0;
-    background: linear-gradient(90deg, rgba(34, 211, 238, 0.08), rgba(239, 68, 68, 0.04));
+    background: linear-gradient(90deg,
+            rgba(34, 211, 238, 0.08),
+            rgba(239, 68, 68, 0.04));
 }
 
 .pull-quote p {
@@ -641,7 +676,9 @@ a {
 .section-divider {
     height: 1px;
     border: 0;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.16), transparent);
+    background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.16),
+            transparent);
 }
 
 /* ---------- Call to action ---------- */
