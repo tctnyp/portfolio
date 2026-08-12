@@ -402,7 +402,7 @@ a {
     color: var(--text);
 }
 
-.contact-icon svg {
+.contact-icon {
     width: 22px;
     height: 22px;
     fill: currentColor;
@@ -552,7 +552,7 @@ a {
     font-size: 14px;
 }
 
-.story-meta li + li::before {
+.story-meta li+li::before {
     content: "•";
     margin-right: 18px;
     opacity: 0.55;
